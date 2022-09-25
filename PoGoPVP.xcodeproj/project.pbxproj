@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9227891828C37925006EA120 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227891728C37925006EA120 /* Production.swift */; };
+		9227891A28C3795B006EA120 /* ProductionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227891928C3795B006EA120 /* ProductionRule.swift */; };
+		9227891C28C37EFC006EA120 /* CompilerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227891B28C37EFC006EA120 /* CompilerErrors.swift */; };
+		92519CC0289D67C100FDCFB7 /* Leitner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CB9289D67C100FDCFB7 /* Leitner.swift */; };
+		92519CC1289D67C100FDCFB7 /* StudentsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBA289D67C100FDCFB7 /* StudentsRepo.swift */; };
+		92519CC2289D67C100FDCFB7 /* PoGoRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBB289D67C100FDCFB7 /* PoGoRepo.swift */; };
+		92519CC3289D67C100FDCFB7 /* PokemonTypesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBC289D67C100FDCFB7 /* PokemonTypesRepo.swift */; };
+		92519CC4289D67C100FDCFB7 /* PokemonRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBD289D67C100FDCFB7 /* PokemonRepo.swift */; };
+		92519CC5289D67C100FDCFB7 /* PokemonMovesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBE289D67C100FDCFB7 /* PokemonMovesRepo.swift */; };
+		92519CC6289D67C100FDCFB7 /* PoGoIdeas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBF289D67C100FDCFB7 /* PoGoIdeas.swift */; };
+		9253CD5728D508C700D0E055 /* PoGoRepoSemAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253CD5628D508C700D0E055 /* PoGoRepoSemAnalysis.swift */; };
+		92742B2128DDEDF600BFB89C /* PoGoPVPEncyclopedia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92742B1D28DDC6D700BFB89C /* PoGoPVPEncyclopedia.txt */; };
+		92742B2428DDEE8000BFB89C /* MetaParserGrammer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92742B2328DDEE8000BFB89C /* MetaParserGrammer.txt */; };
+		92742B2628DDEE8E00BFB89C /* PoGoPVPGrammer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92742B2528DDEE8E00BFB89C /* PoGoPVPGrammer.txt */; };
+		9278BD8628C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278BD8528C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift */; };
+		9285E7C928AF9F57006874E2 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285E7C828AF9F57006874E2 /* Lexer.swift */; };
+		9285E7CB28AFA2D5006874E2 /* TokensEtc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285E7CA28AFA2D5006874E2 /* TokensEtc.swift */; };
+		92A283E528A55DE700955890 /* PoGoViewResearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A283E428A55DE700955890 /* PoGoViewResearch.swift */; };
+		92A8AD3928A65BC1000800CA /* Encyclopedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8AD3828A65BC1000800CA /* Encyclopedia.swift */; };
+		92ACB50228A7DCE600F92DD5 /* PoGoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ACB50128A7DCE600F92DD5 /* PoGoViewModel.swift */; };
+		92AF7CA32854E40B00327BA6 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF7CA22854E40B00327BA6 /* Matrix.swift */; };
+		92AF7CA62854E50800327BA6 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF7CA52854E50800327BA6 /* Globals.swift */; };
+		92AF7CAB2854E9B700327BA6 /* MonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF7CAA2854E9B700327BA6 /* MonTypes.swift */; };
+		92C3A83E28AA33E500F3052D /* PoGoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3A83D28AA33E500F3052D /* PoGoModel.swift */; };
+		92C3A84028AA6E4900F3052D /* PokedexRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3A83F28AA6E4900F3052D /* PokedexRepo.swift */; };
+		92CA815B28AFE78100EF377D /* MetaGrammerSemAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA815A28AFE78100EF377D /* MetaGrammerSemAnalyser.swift */; };
+		92CCB56028BD48EE0072E9CF /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CCB55F28BD48EE0072E9CF /* Compiler.swift */; };
+		92D90CD228426D6D003EC361 /* PoGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D90CD128426D6D003EC361 /* PoGoApp.swift */; };
+		92D90CD428426D6D003EC361 /* PoGoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D90CD328426D6D003EC361 /* PoGoView.swift */; };
+		92D90CD628426D6D003EC361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D90CD528426D6D003EC361 /* Assets.xcassets */; };
+		92D90CD928426D6D003EC361 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D90CD828426D6D003EC361 /* Preview Assets.xcassets */; };
+		92E01B5328B8B3EB00C6D6AD /* PoGoPVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E01B5228B8B3EB00C6D6AD /* PoGoPVPTests.swift */; };
+		92E01B5C28B8BB2800C6D6AD /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E01B5B28B8BB2800C6D6AD /* Stack.swift */; };
+		92E01B5E28B8BBC600C6D6AD /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E01B5D28B8BBC600C6D6AD /* Parser.swift */; };
+		92E886CE28BAB08B00BCCD4E /* Grammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E886CD28BAB08B00BCCD4E /* Grammer.swift */; };
+		92E886D028BAB3D000BCCD4E /* CreateMetaParserGrammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E886CF28BAB3D000BCCD4E /* CreateMetaParserGrammer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92E01B5428B8B3EB00C6D6AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92D90CC628426D6D003EC361 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92D90CCD28426D6D003EC361;
+			remoteInfo = PoGo1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9227891728C37925006EA120 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
+		9227891928C3795B006EA120 /* ProductionRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionRule.swift; sourceTree = "<group>"; };
+		9227891B28C37EFC006EA120 /* CompilerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerErrors.swift; sourceTree = "<group>"; };
+		92519CB9289D67C100FDCFB7 /* Leitner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leitner.swift; sourceTree = "<group>"; };
+		92519CBA289D67C100FDCFB7 /* StudentsRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsRepo.swift; sourceTree = "<group>"; };
+		92519CBB289D67C100FDCFB7 /* PoGoRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoGoRepo.swift; sourceTree = "<group>"; };
+		92519CBC289D67C100FDCFB7 /* PokemonTypesRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTypesRepo.swift; sourceTree = "<group>"; };
+		92519CBD289D67C100FDCFB7 /* PokemonRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonRepo.swift; sourceTree = "<group>"; };
+		92519CBE289D67C100FDCFB7 /* PokemonMovesRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonMovesRepo.swift; sourceTree = "<group>"; };
+		92519CBF289D67C100FDCFB7 /* PoGoIdeas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoGoIdeas.swift; sourceTree = "<group>"; };
+		9253CD5628D508C700D0E055 /* PoGoRepoSemAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoRepoSemAnalysis.swift; sourceTree = "<group>"; };
+		92742B0828DDB9EB00BFB89C /* Documentation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Documentation; path = PoGoPVP/Documentation; sourceTree = "<group>"; };
+		92742B1D28DDC6D700BFB89C /* PoGoPVPEncyclopedia.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PoGoPVPEncyclopedia.txt; sourceTree = "<group>"; };
+		92742B2328DDEE8000BFB89C /* MetaParserGrammer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MetaParserGrammer.txt; sourceTree = "<group>"; };
+		92742B2528DDEE8E00BFB89C /* PoGoPVPGrammer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PoGoPVPGrammer.txt; sourceTree = "<group>"; };
+		9278BD8528C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoPVPPerformanceTests.swift; sourceTree = "<group>"; };
+		9285E7C828AF9F57006874E2 /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
+		9285E7CA28AFA2D5006874E2 /* TokensEtc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensEtc.swift; sourceTree = "<group>"; };
+		92A283E428A55DE700955890 /* PoGoViewResearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoViewResearch.swift; sourceTree = "<group>"; };
+		92A8AD3828A65BC1000800CA /* Encyclopedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encyclopedia.swift; sourceTree = "<group>"; };
+		92ACB50128A7DCE600F92DD5 /* PoGoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoViewModel.swift; sourceTree = "<group>"; };
+		92AF7CA22854E40B00327BA6 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		92AF7CA52854E50800327BA6 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		92AF7CAA2854E9B700327BA6 /* MonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonTypes.swift; sourceTree = "<group>"; };
+		92C3A83D28AA33E500F3052D /* PoGoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoModel.swift; sourceTree = "<group>"; };
+		92C3A83F28AA6E4900F3052D /* PokedexRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexRepo.swift; sourceTree = "<group>"; };
+		92CA815A28AFE78100EF377D /* MetaGrammerSemAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaGrammerSemAnalyser.swift; sourceTree = "<group>"; };
+		92CCB55F28BD48EE0072E9CF /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		92D90CCE28426D6D003EC361 /* PoGoPVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoGoPVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D90CD128426D6D003EC361 /* PoGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoApp.swift; sourceTree = "<group>"; };
+		92D90CD328426D6D003EC361 /* PoGoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoView.swift; sourceTree = "<group>"; };
+		92D90CD528426D6D003EC361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92D90CD828426D6D003EC361 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		92D90CDA28426D6D003EC361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E01B5028B8B3EB00C6D6AD /* PoGoPVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoGoPVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92E01B5228B8B3EB00C6D6AD /* PoGoPVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoPVPTests.swift; sourceTree = "<group>"; };
+		92E01B5B28B8BB2800C6D6AD /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		92E01B5D28B8BBC600C6D6AD /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		92E886CD28BAB08B00BCCD4E /* Grammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grammer.swift; sourceTree = "<group>"; };
+		92E886CF28BAB3D000BCCD4E /* CreateMetaParserGrammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMetaParserGrammer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92D90CCB28426D6D003EC361 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92E01B4D28B8B3EB00C6D6AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92742B1028DDBCAC00BFB89C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92742B2328DDEE8000BFB89C /* MetaParserGrammer.txt */,
+				92742B2528DDEE8E00BFB89C /* PoGoPVPGrammer.txt */,
+				92742B1D28DDC6D700BFB89C /* PoGoPVPEncyclopedia.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9285E7C728AF9F32006874E2 /* RepoCompiler */ = {
+			isa = PBXGroup;
+			children = (
+				9227891B28C37EFC006EA120 /* CompilerErrors.swift */,
+				9285E7CA28AFA2D5006874E2 /* TokensEtc.swift */,
+				92CCB55F28BD48EE0072E9CF /* Compiler.swift */,
+				9285E7C828AF9F57006874E2 /* Lexer.swift */,
+				92E01B5D28B8BBC600C6D6AD /* Parser.swift */,
+				92E886CD28BAB08B00BCCD4E /* Grammer.swift */,
+				9227891928C3795B006EA120 /* ProductionRule.swift */,
+				9227891728C37925006EA120 /* Production.swift */,
+				92E886CF28BAB3D000BCCD4E /* CreateMetaParserGrammer.swift */,
+				92CA815A28AFE78100EF377D /* MetaGrammerSemAnalyser.swift */,
+				9253CD5628D508C700D0E055 /* PoGoRepoSemAnalysis.swift */,
+			);
+			path = RepoCompiler;
+			sourceTree = "<group>";
+		};
+		92ACB50028A7DAAD00F92DD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92C3A83D28AA33E500F3052D /* PoGoModel.swift */,
+				92A8AD3828A65BC1000800CA /* Encyclopedia.swift */,
+				92519CBB289D67C100FDCFB7 /* PoGoRepo.swift */,
+				92519CBD289D67C100FDCFB7 /* PokemonRepo.swift */,
+				92C3A83F28AA6E4900F3052D /* PokedexRepo.swift */,
+				92519CBC289D67C100FDCFB7 /* PokemonTypesRepo.swift */,
+				92519CBA289D67C100FDCFB7 /* StudentsRepo.swift */,
+				92E01B5B28B8BB2800C6D6AD /* Stack.swift */,
+				92519CBE289D67C100FDCFB7 /* PokemonMovesRepo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92C3A83A28AA2CD400F3052D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92D90CD328426D6D003EC361 /* PoGoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92C3A83B28AA2CDF00F3052D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92ACB50128A7DCE600F92DD5 /* PoGoViewModel.swift */,
+				92519CB9289D67C100FDCFB7 /* Leitner.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92C3A83C28AA2CE900F3052D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				92D90CD128426D6D003EC361 /* PoGoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		92D90CC528426D6D003EC361 = {
+			isa = PBXGroup;
+			children = (
+				92742B0828DDB9EB00BFB89C /* Documentation */,
+				92D90CD028426D6D003EC361 /* PoGoPVP */,
+				92E01B5128B8B3EB00C6D6AD /* PoGoPVPTests */,
+				92D90CCF28426D6D003EC361 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92D90CCF28426D6D003EC361 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92D90CCE28426D6D003EC361 /* PoGoPVP.app */,
+				92E01B5028B8B3EB00C6D6AD /* PoGoPVPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92D90CD028426D6D003EC361 /* PoGoPVP */ = {
+			isa = PBXGroup;
+			children = (
+				92742B1028DDBCAC00BFB89C /* Resources */,
+				92AF7CA52854E50800327BA6 /* Globals.swift */,
+				92519CBF289D67C100FDCFB7 /* PoGoIdeas.swift */,
+				92AF7CA22854E40B00327BA6 /* Matrix.swift */,
+				92AF7CAA2854E9B700327BA6 /* MonTypes.swift */,
+				92A283E428A55DE700955890 /* PoGoViewResearch.swift */,
+				9285E7C728AF9F32006874E2 /* RepoCompiler */,
+				92C3A83C28AA2CE900F3052D /* App */,
+				92C3A83B28AA2CDF00F3052D /* ViewModel */,
+				92C3A83A28AA2CD400F3052D /* View */,
+				92ACB50028A7DAAD00F92DD5 /* Model */,
+				92D90CD528426D6D003EC361 /* Assets.xcassets */,
+				92D90CDA28426D6D003EC361 /* Info.plist */,
+				92D90CD728426D6D003EC361 /* Preview Content */,
+			);
+			path = PoGoPVP;
+			sourceTree = "<group>";
+		};
+		92D90CD728426D6D003EC361 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				92D90CD828426D6D003EC361 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		92E01B5128B8B3EB00C6D6AD /* PoGoPVPTests */ = {
+			isa = PBXGroup;
+			children = (
+				9278BD8528C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift */,
+				92E01B5228B8B3EB00C6D6AD /* PoGoPVPTests.swift */,
+			);
+			path = PoGoPVPTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92D90CCD28426D6D003EC361 /* PoGoPVP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92D90CDD28426D6D003EC361 /* Build configuration list for PBXNativeTarget "PoGoPVP" */;
+			buildPhases = (
+				92D90CCA28426D6D003EC361 /* Sources */,
+				92D90CCB28426D6D003EC361 /* Frameworks */,
+				92D90CCC28426D6D003EC361 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoGoPVP;
+			productName = PoGo1;
+			productReference = 92D90CCE28426D6D003EC361 /* PoGoPVP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92E01B4F28B8B3EB00C6D6AD /* PoGoPVPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92E01B5828B8B3EB00C6D6AD /* Build configuration list for PBXNativeTarget "PoGoPVPTests" */;
+			buildPhases = (
+				92E01B4C28B8B3EB00C6D6AD /* Sources */,
+				92E01B4D28B8B3EB00C6D6AD /* Frameworks */,
+				92E01B4E28B8B3EB00C6D6AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92E01B5528B8B3EB00C6D6AD /* PBXTargetDependency */,
+			);
+			name = PoGoPVPTests;
+			productName = PoGo1Tests;
+			productReference = 92E01B5028B8B3EB00C6D6AD /* PoGoPVPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92D90CC628426D6D003EC361 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					92D90CCD28426D6D003EC361 = {
+						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
+					};
+					92E01B4F28B8B3EB00C6D6AD = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 92D90CCD28426D6D003EC361;
+					};
+				};
+			};
+			buildConfigurationList = 92D90CC928426D6D003EC361 /* Build configuration list for PBXProject "PoGoPVP" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92D90CC528426D6D003EC361;
+			productRefGroup = 92D90CCF28426D6D003EC361 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92D90CCD28426D6D003EC361 /* PoGoPVP */,
+				92E01B4F28B8B3EB00C6D6AD /* PoGoPVPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92D90CCC28426D6D003EC361 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92742B2128DDEDF600BFB89C /* PoGoPVPEncyclopedia.txt in Resources */,
+				92D90CD928426D6D003EC361 /* Preview Assets.xcassets in Resources */,
+				92742B2428DDEE8000BFB89C /* MetaParserGrammer.txt in Resources */,
+				92D90CD628426D6D003EC361 /* Assets.xcassets in Resources */,
+				92742B2628DDEE8E00BFB89C /* PoGoPVPGrammer.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92E01B4E28B8B3EB00C6D6AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92D90CCA28426D6D003EC361 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92CCB56028BD48EE0072E9CF /* Compiler.swift in Sources */,
+				92ACB50228A7DCE600F92DD5 /* PoGoViewModel.swift in Sources */,
+				92A283E528A55DE700955890 /* PoGoViewResearch.swift in Sources */,
+				92AF7CA32854E40B00327BA6 /* Matrix.swift in Sources */,
+				92E886CE28BAB08B00BCCD4E /* Grammer.swift in Sources */,
+				9285E7CB28AFA2D5006874E2 /* TokensEtc.swift in Sources */,
+				92AF7CA62854E50800327BA6 /* Globals.swift in Sources */,
+				92E886D028BAB3D000BCCD4E /* CreateMetaParserGrammer.swift in Sources */,
+				92D90CD428426D6D003EC361 /* PoGoView.swift in Sources */,
+				92C3A83E28AA33E500F3052D /* PoGoModel.swift in Sources */,
+				9285E7C928AF9F57006874E2 /* Lexer.swift in Sources */,
+				92519CC0289D67C100FDCFB7 /* Leitner.swift in Sources */,
+				92519CC3289D67C100FDCFB7 /* PokemonTypesRepo.swift in Sources */,
+				92E01B5C28B8BB2800C6D6AD /* Stack.swift in Sources */,
+				92CA815B28AFE78100EF377D /* MetaGrammerSemAnalyser.swift in Sources */,
+				9253CD5728D508C700D0E055 /* PoGoRepoSemAnalysis.swift in Sources */,
+				92D90CD228426D6D003EC361 /* PoGoApp.swift in Sources */,
+				92519CC5289D67C100FDCFB7 /* PokemonMovesRepo.swift in Sources */,
+				9227891828C37925006EA120 /* Production.swift in Sources */,
+				92519CC6289D67C100FDCFB7 /* PoGoIdeas.swift in Sources */,
+				92519CC1289D67C100FDCFB7 /* StudentsRepo.swift in Sources */,
+				92C3A84028AA6E4900F3052D /* PokedexRepo.swift in Sources */,
+				92519CC2289D67C100FDCFB7 /* PoGoRepo.swift in Sources */,
+				92AF7CAB2854E9B700327BA6 /* MonTypes.swift in Sources */,
+				92519CC4289D67C100FDCFB7 /* PokemonRepo.swift in Sources */,
+				92E01B5E28B8BBC600C6D6AD /* Parser.swift in Sources */,
+				92A8AD3928A65BC1000800CA /* Encyclopedia.swift in Sources */,
+				9227891A28C3795B006EA120 /* ProductionRule.swift in Sources */,
+				9227891C28C37EFC006EA120 /* CompilerErrors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92E01B4C28B8B3EB00C6D6AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92E01B5328B8B3EB00C6D6AD /* PoGoPVPTests.swift in Sources */,
+				9278BD8628C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92E01B5528B8B3EB00C6D6AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92D90CCD28426D6D003EC361 /* PoGoPVP */;
+			targetProxy = 92E01B5428B8B3EB00C6D6AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		92D90CDB28426D6D003EC361 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		92D90CDC28426D6D003EC361 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92D90CDE28426D6D003EC361 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PoGoPVP/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LBCUZ943J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = PoGoPVP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anthony.stanners.PoGoPVP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		92D90CDF28426D6D003EC361 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PoGoPVP/Preview Content\"";
+				DEVELOPMENT_TEAM = 4LBCUZ943J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = PoGoPVP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anthony.stanners.PoGoPVP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		92E01B5628B8B3EB00C6D6AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LBCUZ943J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anthony.stanners.PoGoPVPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoGoPVP.app/PoGoPVP";
+			};
+			name = Debug;
+		};
+		92E01B5728B8B3EB00C6D6AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LBCUZ943J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anthony.stanners.PoGoPVPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoGoPVP.app/PoGoPVP";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92D90CC928426D6D003EC361 /* Build configuration list for PBXProject "PoGoPVP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D90CDB28426D6D003EC361 /* Debug */,
+				92D90CDC28426D6D003EC361 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92D90CDD28426D6D003EC361 /* Build configuration list for PBXNativeTarget "PoGoPVP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D90CDE28426D6D003EC361 /* Debug */,
+				92D90CDF28426D6D003EC361 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92E01B5828B8B3EB00C6D6AD /* Build configuration list for PBXNativeTarget "PoGoPVPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92E01B5628B8B3EB00C6D6AD /* Debug */,
+				92E01B5728B8B3EB00C6D6AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92D90CC628426D6D003EC361 /* Project object */;
+}
