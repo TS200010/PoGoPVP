@@ -54,9 +54,9 @@ struct Constants {
 extension Color {
     static let ui = Color.UI()
     struct UI{
-     let Normal = Color("Normal")
-     let Fire = Color("Fire")
-     let Ghost = Color("Ghost")
+     let normal = Color("Normal")
+     let fire = Color("Fire")
+     let ghost = Color("Ghost")
     }
     func findColor( in: String ) -> Void{
         
@@ -67,22 +67,6 @@ struct TypeColours{
     
 }
 
-enum eMonTypeNames : Int {
-    case normal, fire, water, electric, grass, ice, fighting, poison, ground, flying, psycic, bug, rock, ghost, dragon, dark, steel, fairy
-}
-  
-enum eAttackEffect : Int {
-    case NoEffect=0, NotVeryEffective, NormalEffect, SuperEffective
-}
 
-//
-// Knowledge related GLobal Declarations
-// =========
-//
-enum KnowledgeKind {
-    case TypeNameImageColor
-    case TypeKanji
-    case TypeEffectivenessAttack
-    case TypeEffectivenessDefense
-    case AnotherKindOfKnowledge
-}
+
+  

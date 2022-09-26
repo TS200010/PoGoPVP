@@ -14,29 +14,23 @@ import SwiftUI
 //
 // This repository contains the truth about Pokemon Types
 //
-enum PoGoTypeName: Int /*, Decodable*/ {
-    case Normal=0,
-         Dragon=1,
-         Fire=2,
-         Ghost=3
-}
 
 protocol PokemonTypeTraits /*: Decodable*/ {
-    var type:   PoGoTypeName { get }
+    var type:   MonType { get }
     var color:  Color { get }
-    var image:  Something3 { get }
+    var image:  String { get }
 }
 
 struct PokemonType : PokemonTypeTraits {
-    var type:   PoGoTypeName
+    var type:   MonType
     var color:  Color
-    var image:  Something3
+    var image:  String
 }
 
 let pokemonTypesRepo : Array< PokemonType > = [
-    PokemonType( type:PoGoTypeName.Normal, color: Color.ui.Normal, image: "Image Name Normal"),
-    PokemonType( type:PoGoTypeName.Fire,   color: Color.ui.Fire,   image: "Image Name Fire"),
-    PokemonType( type:PoGoTypeName.Ghost,  color: Color.ui.Ghost,  image: "Image Name Ghost")
+    PokemonType( type:MonType.normal, color: Color.ui.normal, image: "Image Name Normal"),
+    PokemonType( type:MonType.fire,   color: Color.ui.fire,   image: "Image Name Fire"),
+    PokemonType( type:MonType.ghost,  color: Color.ui.ghost,  image: "Image Name Ghost")
 ]
  
 

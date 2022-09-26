@@ -43,6 +43,9 @@
 		92E01B5E28B8BBC600C6D6AD /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E01B5D28B8BBC600C6D6AD /* Parser.swift */; };
 		92E886CE28BAB08B00BCCD4E /* Grammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E886CD28BAB08B00BCCD4E /* Grammer.swift */; };
 		92E886D028BAB3D000BCCD4E /* CreateMetaParserGrammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E886CF28BAB3D000BCCD4E /* CreateMetaParserGrammer.swift */; };
+		92FE550B28E0DC560040A469 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE550A28E0DC560040A469 /* Effect.swift */; };
+		92FE550D28E0DEC10040A469 /* RepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE550C28E0DEC10040A469 /* RepoTests.swift */; };
+		92FE550F28E0EE440040A469 /* MonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE550E28E0EE440040A469 /* MonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,9 @@
 		92E01B5D28B8BBC600C6D6AD /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		92E886CD28BAB08B00BCCD4E /* Grammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grammer.swift; sourceTree = "<group>"; };
 		92E886CF28BAB3D000BCCD4E /* CreateMetaParserGrammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMetaParserGrammer.swift; sourceTree = "<group>"; };
+		92FE550A28E0DC560040A469 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		92FE550C28E0DEC10040A469 /* RepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTests.swift; sourceTree = "<group>"; };
+		92FE550E28E0EE440040A469 /* MonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,8 @@
 				92519CBA289D67C100FDCFB7 /* StudentsRepo.swift */,
 				92E01B5B28B8BB2800C6D6AD /* Stack.swift */,
 				92519CBE289D67C100FDCFB7 /* PokemonMovesRepo.swift */,
+				92FE550A28E0DC560040A469 /* Effect.swift */,
+				92FE550E28E0EE440040A469 /* MonType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 		92E01B5128B8B3EB00C6D6AD /* PoGoPVPTests */ = {
 			isa = PBXGroup;
 			children = (
+				92FE550C28E0DEC10040A469 /* RepoTests.swift */,
 				9278BD8528C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift */,
 				92E01B5228B8B3EB00C6D6AD /* PoGoPVPTests.swift */,
 			);
@@ -347,6 +356,8 @@
 			files = (
 				92CCB56028BD48EE0072E9CF /* Compiler.swift in Sources */,
 				92ACB50228A7DCE600F92DD5 /* PoGoViewModel.swift in Sources */,
+				92FE550B28E0DC560040A469 /* Effect.swift in Sources */,
+				92FE550F28E0EE440040A469 /* MonType.swift in Sources */,
 				92A283E528A55DE700955890 /* PoGoViewResearch.swift in Sources */,
 				92AF7CA32854E40B00327BA6 /* Matrix.swift in Sources */,
 				92E886CE28BAB08B00BCCD4E /* Grammer.swift in Sources */,
@@ -382,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E01B5328B8B3EB00C6D6AD /* PoGoPVPTests.swift in Sources */,
+				92FE550D28E0DEC10040A469 /* RepoTests.swift in Sources */,
 				9278BD8628C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

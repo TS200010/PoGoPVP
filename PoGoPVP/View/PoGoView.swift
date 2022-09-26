@@ -30,7 +30,7 @@ struct PoGoView: View {
                             viewModel.chooseNormal()
                         }
                     Circle()
-                        .fill().foregroundColor(Color.ui.Fire)
+                        .fill().foregroundColor(Color.ui.fire)
                         .frame(width: 200, height: 200)
                         .position(x:150, y: 100)
                 }

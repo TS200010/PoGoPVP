@@ -21,7 +21,7 @@ enum MoveName: Int {
 
 protocol PokemonMoveTraits : PoGoRepoTraits, Hashable {
     var name: String { get }
-    var typeName: PoGoTypeName { get }
+    var typeName: MonType { get }
     // Other traits of PoGo Moves
 }
 
@@ -46,7 +46,7 @@ struct PokemonMove : PokemonMoveTraits/*, Decodable*/ {
     static var nextID: ID = 0
 
     var name: String
-    var typeName: PoGoTypeName
+    var typeName: MonType
     func fill()->Bool { return true }
 }
 
@@ -55,9 +55,9 @@ struct PokemonMove : PokemonMoveTraits/*, Decodable*/ {
 // .. or perhaps get from ...? GIT: https://github.com/kinkofer/PokemonAPI
 
 let pokemonMoves: Array< any PokemonMoveTraits > = [
-    PokemonMove( name: "Shadow Ball", typeName: PoGoTypeName.Ghost  ),
-    PokemonMove( name: "Fire Punch",  typeName: PoGoTypeName.Fire   ),
-    PokemonMove( name: "Yawn",        typeName: PoGoTypeName.Normal )
+    PokemonMove( name: "Shadow Ball", typeName: .ghost  ),
+    PokemonMove( name: "Fire Punch",  typeName: .fire   ),
+    PokemonMove( name: "Yawn",        typeName: .normal )
 ]
 
 func TestPokemonMove()->Void {
