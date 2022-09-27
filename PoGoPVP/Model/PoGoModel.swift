@@ -81,6 +81,20 @@ struct PoGoModel {
                                                                     tokenListToUse:    PoGoPVPRepoTokenList(),
                                                                     grammerToUse:      compiledPoGoPVPGrammer as! Grammer,
                                                                     semAnalyserToUse:  PoGoRepoSemantics( ) )
+        
+        let decoder = JSONDecoder()
+        let data = Data(stringToDecode.utf8)
+        
+        var v: [PVPokeMons] = []
+    
+        do {
+            let decoded = try decoder.decode([PVPokeMons].self, from: data )
+            v = decoded
+            print( decoded )
+        } catch {
+            print(v)
+            print( "Failed to decode" )
+        }
 
         if repositories == nil {
             print ("FATAL ERROR: Repositories were not successfully compiled")

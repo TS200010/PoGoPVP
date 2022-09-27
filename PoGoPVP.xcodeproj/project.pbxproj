@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92093D0728E19D49001122BC /* PokemonFromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92093D0628E19D49001122BC /* PokemonFromJSON.swift */; };
+		92093D0928E19D8D001122BC /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 92093D0828E19D8D001122BC /* pokemon.json */; };
+		92093D0B28E20320001122BC /* Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92093D0A28E20320001122BC /* Traits.swift */; };
+		92093D0F28E20C03001122BC /* Mewtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 92093D0E28E20C03001122BC /* Mewtwo.png */; };
+		92093D1128E20C09001122BC /* Dialga.png in Resources */ = {isa = PBXBuildFile; fileRef = 92093D1028E20C09001122BC /* Dialga.png */; };
+		92093D1328E20C0E001122BC /* GiratinaOrigin.png in Resources */ = {isa = PBXBuildFile; fileRef = 92093D1228E20C0E001122BC /* GiratinaOrigin.png */; };
+		92093D1628E21355001122BC /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = 92093D1528E21355001122BC /* dragon.png */; };
 		9227891828C37925006EA120 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227891728C37925006EA120 /* Production.swift */; };
 		9227891A28C3795B006EA120 /* ProductionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227891928C3795B006EA120 /* ProductionRule.swift */; };
 		9227891C28C37EFC006EA120 /* CompilerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227891B28C37EFC006EA120 /* CompilerErrors.swift */; };
@@ -43,6 +50,9 @@
 		92E01B5E28B8BBC600C6D6AD /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E01B5D28B8BBC600C6D6AD /* Parser.swift */; };
 		92E886CE28BAB08B00BCCD4E /* Grammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E886CD28BAB08B00BCCD4E /* Grammer.swift */; };
 		92E886D028BAB3D000BCCD4E /* CreateMetaParserGrammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E886CF28BAB3D000BCCD4E /* CreateMetaParserGrammer.swift */; };
+		92FE550B28E0DC560040A469 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE550A28E0DC560040A469 /* Effect.swift */; };
+		92FE550D28E0DEC10040A469 /* RepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE550C28E0DEC10040A469 /* RepoTests.swift */; };
+		92FE550F28E0EE440040A469 /* MonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE550E28E0EE440040A469 /* MonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92093D0628E19D49001122BC /* PokemonFromJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFromJSON.swift; sourceTree = "<group>"; };
+		92093D0828E19D8D001122BC /* pokemon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
+		92093D0A28E20320001122BC /* Traits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traits.swift; sourceTree = "<group>"; };
+		92093D0E28E20C03001122BC /* Mewtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mewtwo.png; sourceTree = "<group>"; };
+		92093D1028E20C09001122BC /* Dialga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dialga.png; sourceTree = "<group>"; };
+		92093D1228E20C0E001122BC /* GiratinaOrigin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GiratinaOrigin.png; sourceTree = "<group>"; };
+		92093D1528E21355001122BC /* dragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragon.png; sourceTree = "<group>"; };
 		9227891728C37925006EA120 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		9227891928C3795B006EA120 /* ProductionRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionRule.swift; sourceTree = "<group>"; };
 		9227891B28C37EFC006EA120 /* CompilerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerErrors.swift; sourceTree = "<group>"; };
@@ -96,6 +113,9 @@
 		92E01B5D28B8BBC600C6D6AD /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		92E886CD28BAB08B00BCCD4E /* Grammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grammer.swift; sourceTree = "<group>"; };
 		92E886CF28BAB3D000BCCD4E /* CreateMetaParserGrammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMetaParserGrammer.swift; sourceTree = "<group>"; };
+		92FE550A28E0DC560040A469 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		92FE550C28E0DEC10040A469 /* RepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTests.swift; sourceTree = "<group>"; };
+		92FE550E28E0EE440040A469 /* MonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +136,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92093D0C28E20333001122BC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				92FE550E28E0EE440040A469 /* MonType.swift */,
+				92AF7CAA2854E9B700327BA6 /* MonTypes.swift */,
+				92093D0628E19D49001122BC /* PokemonFromJSON.swift */,
+				92093D0A28E20320001122BC /* Traits.swift */,
+				92FE550A28E0DC560040A469 /* Effect.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		92093D0D28E20BF1001122BC /* PokemonImages */ = {
+			isa = PBXGroup;
+			children = (
+				92093D1228E20C0E001122BC /* GiratinaOrigin.png */,
+				92093D1028E20C09001122BC /* Dialga.png */,
+				92093D0E28E20C03001122BC /* Mewtwo.png */,
+			);
+			path = PokemonImages;
+			sourceTree = "<group>";
+		};
+		92093D1428E21339001122BC /* TypeIcons */ = {
+			isa = PBXGroup;
+			children = (
+				92093D1528E21355001122BC /* dragon.png */,
+			);
+			path = TypeIcons;
+			sourceTree = "<group>";
+		};
 		92742B1028DDBCAC00BFB89C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92093D1428E21339001122BC /* TypeIcons */,
+				92093D0D28E20BF1001122BC /* PokemonImages */,
+				92093D0828E19D8D001122BC /* pokemon.json */,
 				92742B2328DDEE8000BFB89C /* MetaParserGrammer.txt */,
 				92742B2528DDEE8E00BFB89C /* PoGoPVPGrammer.txt */,
 				92742B1D28DDC6D700BFB89C /* PoGoPVPEncyclopedia.txt */,
@@ -207,12 +260,12 @@
 		92D90CD028426D6D003EC361 /* PoGoPVP */ = {
 			isa = PBXGroup;
 			children = (
-				92742B1028DDBCAC00BFB89C /* Resources */,
 				92AF7CA52854E50800327BA6 /* Globals.swift */,
 				92519CBF289D67C100FDCFB7 /* PoGoIdeas.swift */,
 				92AF7CA22854E40B00327BA6 /* Matrix.swift */,
-				92AF7CAA2854E9B700327BA6 /* MonTypes.swift */,
 				92A283E428A55DE700955890 /* PoGoViewResearch.swift */,
+				92742B1028DDBCAC00BFB89C /* Resources */,
+				92093D0C28E20333001122BC /* Repositories */,
 				9285E7C728AF9F32006874E2 /* RepoCompiler */,
 				92C3A83C28AA2CE900F3052D /* App */,
 				92C3A83B28AA2CDF00F3052D /* ViewModel */,
@@ -236,6 +289,7 @@
 		92E01B5128B8B3EB00C6D6AD /* PoGoPVPTests */ = {
 			isa = PBXGroup;
 			children = (
+				92FE550C28E0DEC10040A469 /* RepoTests.swift */,
 				9278BD8528C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift */,
 				92E01B5228B8B3EB00C6D6AD /* PoGoPVPTests.swift */,
 			);
@@ -324,10 +378,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				92742B2128DDEDF600BFB89C /* PoGoPVPEncyclopedia.txt in Resources */,
+				92093D0928E19D8D001122BC /* pokemon.json in Resources */,
 				92D90CD928426D6D003EC361 /* Preview Assets.xcassets in Resources */,
+				92093D0F28E20C03001122BC /* Mewtwo.png in Resources */,
 				92742B2428DDEE8000BFB89C /* MetaParserGrammer.txt in Resources */,
+				92093D1328E20C0E001122BC /* GiratinaOrigin.png in Resources */,
+				92093D1628E21355001122BC /* dragon.png in Resources */,
 				92D90CD628426D6D003EC361 /* Assets.xcassets in Resources */,
 				92742B2628DDEE8E00BFB89C /* PoGoPVPGrammer.txt in Resources */,
+				92093D1128E20C09001122BC /* Dialga.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +406,9 @@
 			files = (
 				92CCB56028BD48EE0072E9CF /* Compiler.swift in Sources */,
 				92ACB50228A7DCE600F92DD5 /* PoGoViewModel.swift in Sources */,
+				92FE550B28E0DC560040A469 /* Effect.swift in Sources */,
+				92FE550F28E0EE440040A469 /* MonType.swift in Sources */,
+				92093D0B28E20320001122BC /* Traits.swift in Sources */,
 				92A283E528A55DE700955890 /* PoGoViewResearch.swift in Sources */,
 				92AF7CA32854E40B00327BA6 /* Matrix.swift in Sources */,
 				92E886CE28BAB08B00BCCD4E /* Grammer.swift in Sources */,
@@ -366,6 +428,7 @@
 				9227891828C37925006EA120 /* Production.swift in Sources */,
 				92519CC6289D67C100FDCFB7 /* PoGoIdeas.swift in Sources */,
 				92519CC1289D67C100FDCFB7 /* StudentsRepo.swift in Sources */,
+				92093D0728E19D49001122BC /* PokemonFromJSON.swift in Sources */,
 				92C3A84028AA6E4900F3052D /* PokedexRepo.swift in Sources */,
 				92519CC2289D67C100FDCFB7 /* PoGoRepo.swift in Sources */,
 				92AF7CAB2854E9B700327BA6 /* MonTypes.swift in Sources */,
@@ -382,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E01B5328B8B3EB00C6D6AD /* PoGoPVPTests.swift in Sources */,
+				92FE550D28E0DEC10040A469 /* RepoTests.swift in Sources */,
 				9278BD8628C7607B00A7EEFC /* PoGoPVPPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

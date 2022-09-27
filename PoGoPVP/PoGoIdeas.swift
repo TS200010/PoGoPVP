@@ -60,7 +60,7 @@ protocol BChildP : B {
 // TypeColours Knowledge
 // =====================
 protocol TypeColourKnowledgeItemP : KnowledgeItemTraits {
-    var typeName: PoGoTypeName { get }
+    var typeName: MonType { get }
 }
 
 

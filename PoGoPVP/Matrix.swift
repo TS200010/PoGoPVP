@@ -28,7 +28,7 @@ struct Matrix<T> {
             grid[(row * columns) + column] = newValue
         }
     }
-    subscript(_ row: eMonTypeNames, _ column: eMonTypeNames ) -> T {
+    subscript(_ row: MonType, _ column: MonType ) -> T {
         get {
             assert(indexIsValid(row: row.rawValue, column: column.rawValue), "Index out of range")
             return grid[(row.rawValue * columns) + column.rawValue]
