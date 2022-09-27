@@ -12,7 +12,7 @@ import Foundation
 struct PoGoModel {
     var compiler: Compiler?
     var encyclopedia = EncyclopediaRepo(contents: [:])
-    var pokedex = PokedexRepo()
+    var dex: pokedex?
     var stringToParse: String = ""
     
     private mutating func GetStringToParse( resourceToCompile: String ) -> Bool {
@@ -49,6 +49,48 @@ struct PoGoModel {
     
     
     mutating func initialisePoGoModel() -> Bool {
+        var stringToDecode =
+        """
+        [{
+            "dex": 1,
+            "speciesName": "Bulbasaur",
+            "speciesId": "bulbasaur",
+            "baseStats": {
+                "atk": 118,
+                "def": 111,
+                "hp": 128
+            },
+            "types": ["grass", "poison"],
+            "fastMoves": ["TACKLE", "VINE_WHIP"],
+            "chargedMoves": ["POWER_WHIP", "SEED_BOMB", "SLUDGE_BOMB"],
+            "tags": ["starter", "shadoweligible"],
+            "defaultIVs": {
+                "cp500": [18, 2, 14, 7],
+                "cp1500": [50, 15, 15, 15],
+                "cp2500": [50, 15, 15, 15]
+            },
+            "level25CP": 627,
+            "buddyDistance": 3,
+            "thirdMoveCost": 10000,
+            "released": true,
+            "family": {
+                "id": "FAMILY_BULBASAUR",
+                "evolutions": ["ivysaur"]
+            }
+        }
+        ]
+
+        """
+        
+        // Create the pokedex
+        let data = Data(stringToDecode.utf8)
+        dex = pokedex( )
+        dex?.populatePokemons(from: data)
+        print(dex)
+       
+
+        
+
         // Create the META-PARSER-GRAMMER
         // It is CORRECT that we parse the PoGoPVPGrammer ITSELF with the MetaParserTokenList
         // ... think about it!
@@ -81,21 +123,7 @@ struct PoGoModel {
                                                                     tokenListToUse:    PoGoPVPRepoTokenList(),
                                                                     grammerToUse:      compiledPoGoPVPGrammer as! Grammer,
                                                                     semAnalyserToUse:  PoGoRepoSemantics( ) )
-        
-        let decoder = JSONDecoder()
-        let data = Data(stringToDecode.utf8)
-        
-        var v: [PVPokeMons] = []
-    
-        do {
-            let decoded = try decoder.decode([PVPokeMons].self, from: data )
-            v = decoded
-            print( decoded )
-        } catch {
-            print(v)
-            print( "Failed to decode" )
-        }
-
+   
         if repositories == nil {
             print ("FATAL ERROR: Repositories were not successfully compiled")
             return false }

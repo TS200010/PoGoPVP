@@ -21,7 +21,6 @@
 		92519CC1289D67C100FDCFB7 /* StudentsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBA289D67C100FDCFB7 /* StudentsRepo.swift */; };
 		92519CC2289D67C100FDCFB7 /* PoGoRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBB289D67C100FDCFB7 /* PoGoRepo.swift */; };
 		92519CC3289D67C100FDCFB7 /* PokemonTypesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBC289D67C100FDCFB7 /* PokemonTypesRepo.swift */; };
-		92519CC4289D67C100FDCFB7 /* PokemonRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBD289D67C100FDCFB7 /* PokemonRepo.swift */; };
 		92519CC5289D67C100FDCFB7 /* PokemonMovesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBE289D67C100FDCFB7 /* PokemonMovesRepo.swift */; };
 		92519CC6289D67C100FDCFB7 /* PoGoIdeas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92519CBF289D67C100FDCFB7 /* PoGoIdeas.swift */; };
 		9253CD5728D508C700D0E055 /* PoGoRepoSemAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253CD5628D508C700D0E055 /* PoGoRepoSemAnalysis.swift */; };
@@ -38,7 +37,6 @@
 		92AF7CA62854E50800327BA6 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF7CA52854E50800327BA6 /* Globals.swift */; };
 		92AF7CAB2854E9B700327BA6 /* MonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AF7CAA2854E9B700327BA6 /* MonTypes.swift */; };
 		92C3A83E28AA33E500F3052D /* PoGoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3A83D28AA33E500F3052D /* PoGoModel.swift */; };
-		92C3A84028AA6E4900F3052D /* PokedexRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3A83F28AA6E4900F3052D /* PokedexRepo.swift */; };
 		92CA815B28AFE78100EF377D /* MetaGrammerSemAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA815A28AFE78100EF377D /* MetaGrammerSemAnalyser.swift */; };
 		92CCB56028BD48EE0072E9CF /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CCB55F28BD48EE0072E9CF /* Compiler.swift */; };
 		92D90CD228426D6D003EC361 /* PoGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D90CD128426D6D003EC361 /* PoGoApp.swift */; };
@@ -80,7 +78,6 @@
 		92519CBA289D67C100FDCFB7 /* StudentsRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsRepo.swift; sourceTree = "<group>"; };
 		92519CBB289D67C100FDCFB7 /* PoGoRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoGoRepo.swift; sourceTree = "<group>"; };
 		92519CBC289D67C100FDCFB7 /* PokemonTypesRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTypesRepo.swift; sourceTree = "<group>"; };
-		92519CBD289D67C100FDCFB7 /* PokemonRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonRepo.swift; sourceTree = "<group>"; };
 		92519CBE289D67C100FDCFB7 /* PokemonMovesRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonMovesRepo.swift; sourceTree = "<group>"; };
 		92519CBF289D67C100FDCFB7 /* PoGoIdeas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoGoIdeas.swift; sourceTree = "<group>"; };
 		9253CD5628D508C700D0E055 /* PoGoRepoSemAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoRepoSemAnalysis.swift; sourceTree = "<group>"; };
@@ -98,7 +95,6 @@
 		92AF7CA52854E50800327BA6 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		92AF7CAA2854E9B700327BA6 /* MonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonTypes.swift; sourceTree = "<group>"; };
 		92C3A83D28AA33E500F3052D /* PoGoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoGoModel.swift; sourceTree = "<group>"; };
-		92C3A83F28AA6E4900F3052D /* PokedexRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexRepo.swift; sourceTree = "<group>"; };
 		92CA815A28AFE78100EF377D /* MetaGrammerSemAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaGrammerSemAnalyser.swift; sourceTree = "<group>"; };
 		92CCB55F28BD48EE0072E9CF /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
 		92D90CCE28426D6D003EC361 /* PoGoPVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoGoPVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,8 +199,6 @@
 				92C3A83D28AA33E500F3052D /* PoGoModel.swift */,
 				92A8AD3828A65BC1000800CA /* Encyclopedia.swift */,
 				92519CBB289D67C100FDCFB7 /* PoGoRepo.swift */,
-				92519CBD289D67C100FDCFB7 /* PokemonRepo.swift */,
-				92C3A83F28AA6E4900F3052D /* PokedexRepo.swift */,
 				92519CBC289D67C100FDCFB7 /* PokemonTypesRepo.swift */,
 				92519CBA289D67C100FDCFB7 /* StudentsRepo.swift */,
 				92E01B5B28B8BB2800C6D6AD /* Stack.swift */,
@@ -429,10 +423,8 @@
 				92519CC6289D67C100FDCFB7 /* PoGoIdeas.swift in Sources */,
 				92519CC1289D67C100FDCFB7 /* StudentsRepo.swift in Sources */,
 				92093D0728E19D49001122BC /* PokemonFromJSON.swift in Sources */,
-				92C3A84028AA6E4900F3052D /* PokedexRepo.swift in Sources */,
 				92519CC2289D67C100FDCFB7 /* PoGoRepo.swift in Sources */,
 				92AF7CAB2854E9B700327BA6 /* MonTypes.swift in Sources */,
-				92519CC4289D67C100FDCFB7 /* PokemonRepo.swift in Sources */,
 				92E01B5E28B8BBC600C6D6AD /* Parser.swift in Sources */,
 				92A8AD3928A65BC1000800CA /* Encyclopedia.swift in Sources */,
 				9227891A28C3795B006EA120 /* ProductionRule.swift in Sources */,

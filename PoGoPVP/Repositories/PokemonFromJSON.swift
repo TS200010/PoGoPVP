@@ -7,39 +7,6 @@
 
 import Foundation
 
-var stringToDecode =
-"""
-[{
-    "dex": 1,
-    "speciesName": "Bulbasaur",
-    "speciesId": "bulbasaur",
-    "baseStats": {
-        "atk": 118,
-        "def": 111,
-        "hp": 128
-    },
-    "types": ["grass", "poison"],
-    "fastMoves": ["TACKLE", "VINE_WHIP"],
-    "chargedMoves": ["POWER_WHIP", "SEED_BOMB", "SLUDGE_BOMB"],
-    "tags": ["starter", "shadoweligible"],
-    "defaultIVs": {
-        "cp500": [18, 2, 14, 7],
-        "cp1500": [50, 15, 15, 15],
-        "cp2500": [50, 15, 15, 15]
-    },
-    "level25CP": 627,
-    "buddyDistance": 3,
-    "thirdMoveCost": 10000,
-    "released": true,
-    "family": {
-        "id": "FAMILY_BULBASAUR",
-        "evolutions": ["ivysaur"]
-    }
-}
-]
-
-"""
-
 struct BaseStats : Codable {
     var atk: Int
     var def: Int
@@ -57,7 +24,7 @@ struct Family : Codable {
     var evolutions: [String]
 }
 
-struct PVPokeMons : Codable {
+struct PvPokePokemon : Codable {
     var dex: Int
     var speciesName: String
     var speciesId: String
@@ -74,4 +41,20 @@ struct PVPokeMons : Codable {
     var family: Family
 }
 
+struct pokedex {
+    var pokemons: [PvPokePokemon] = []
+
+    mutating func populatePokemons( from data: Data )->Bool {
+        let decoder = JSONDecoder()
+        do {
+            let d = try decoder.decode([PvPokePokemon].self, from: data )
+            pokemons = d
+            print( pokemons )
+        } catch {
+            print( "Failed to decode" )
+            return false
+        }
+        return true
+    }
+}
 
