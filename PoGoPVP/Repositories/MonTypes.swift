@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SMonTypes {
+struct MonTypes {
 private var mt:Matrix<Effect> = Matrix(rows: 18, columns: 18, defaultValue:.normalEffect)
     init(){
         mt[.normal, .ghost]   = .noEffect
@@ -27,7 +27,7 @@ private var mt:Matrix<Effect> = Matrix(rows: 18, columns: 18, defaultValue:.norm
         mt[.water,  .fire ]   = .superEffective
     }
 }
-struct SMonStrings {
+struct MonStrings {
 private var st:Matrix<String> = Matrix(rows: 18, columns: 18, defaultValue:"No memo")
     init(){
         st[.normal, .ghost]
@@ -68,7 +68,7 @@ private var st:Matrix<String> = Matrix(rows: 18, columns: 18, defaultValue:"No m
     }
 }
     
-struct STitBit {
+struct TitBit {
     let titBit = "Ghosts and Dragons are botb Super Effective on themselves"
     let titBit2 = "Normal is Super Effective against nothing"
     let titBit3 = "Ghosts and Normal are completely oblivious of each other having No Effect"

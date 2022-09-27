@@ -7,6 +7,7 @@
 
 
 import Foundation
+
 enum MonType : Int, CustomStringConvertible {
     case normal=0
     case fire

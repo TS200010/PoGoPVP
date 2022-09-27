@@ -33,6 +33,10 @@ struct PoGoView: View {
                         .fill().foregroundColor(Color.ui.fire)
                         .frame(width: 200, height: 200)
                         .position(x:150, y: 100)
+                    Image("Mewtwo")
+                        .frame(width: 200, height: 200)
+                    Image("Dragon")
+                        .frame(width: 200, height: 200)
                 }
             .background( Image("PoGoBk"))
 //            .blur(radius:10)
