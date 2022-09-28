@@ -81,12 +81,12 @@ final class RepoTests: XCTestCase {
         var s = "Normal"
         var a = s.monTypeFromString()
         XCTAssert( a == .normal )
-        XCTAssert( a?.stringFromMonType( ) == s)
+        XCTAssert( a.stringFromMonType( ) == s)
         
         s = "Fairy"
         a = s.monTypeFromString()
         XCTAssert( a == .fairy )
-        XCTAssert( a?.stringFromMonType( ) == s)
+        XCTAssert( a.stringFromMonType( ) == s)
     }
 
 }

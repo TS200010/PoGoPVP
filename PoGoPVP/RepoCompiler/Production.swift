@@ -55,9 +55,7 @@ class Production {
         var currToken = myLexer?.getCurrentToken()
         for t in elementList {
             currToken = myLexer?.getCurrentToken()
-            if gParserTrace {
-                print( "EXPECTING: \(String(describing: t)) EXAMINING: \(String(describing: currToken))", t==currToken)
-            }
+            if gParserTrace { print( "EXPECTING: \(String(describing: t)) EXAMINING: \(String(describing: currToken))", t==currToken) }
             switch t {
             case .terminalSymbol(_):
                 if t==currToken {
@@ -68,24 +66,12 @@ class Production {
                     print("SYNTAX ERROR 02: \(String(describing: t)) expected \(String(describing: currToken)) found")
                     return false
                 }
-//                
-//            case .nonTerminalSymbol(_):
-//                if t==currToken {
-//                    myCompiler?.pushSem(item: currToken! )
-//                    currToken = myLexer?.advanceToNextToken()
-//                    continue
-//                } else {
-//                    print("SYNTAX ERROR 03: \(String(describing: t)) expected \(String(describing: currToken)) found")
-//                    return false
-//                }
                 
             case .ruleReference( let s ):
                 // TODO: check forced unwrapping OK
                 if (myGrammer!.getRuleNamed(string: s))!.parseProductionRule(){
-//                    currToken = myLexer?.getCurrentToken()
                     continue
                 } else {
-//                    currToken = myLexer?.getCurrentToken()
                     print( "SYNTAX ERROR 04: Production \(s) failed to parse at \(String(describing: currToken))")
                     return false
                 }
@@ -93,7 +79,6 @@ class Production {
             case .semanticActionReference( let s ):
                 // TODO: check forced unwrapping OK
                 mySemanticAnalyser?.semDispatch( name: s )
- //               currToken = myLexer?.getCurrentToken()
                 continue
                 
             case .noToken:
@@ -101,6 +86,7 @@ class Production {
                 return false
             }
         }
+        print ("Return TRUE")
         return true
     }
     
@@ -133,15 +119,13 @@ class Production {
         switch elementList[0] {
         case .semanticActionReference(_):
             i = 1
-            if elementList.count<=1 { // Check if  there is only a semAction 
+            if elementList.count<=1 {
                 return false
             }
         default:
             break
         }
-        if gParserTrace {
-            print( "LOOKING FOR: \(t) AT: \( elementList[i])", t==elementList[i])
-        }
+        if gParserTrace { print( "LOOKING FOR: \(t) AT: \( elementList[i])", t==elementList[i]) }
         if elementList[i] == t {
             return true
         }

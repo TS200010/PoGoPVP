@@ -91,7 +91,7 @@ class ProductionRule {
 
         // Not found so we look into each PRODUCTION to see if the current TOKEN is down there somewhere.
         // ... if it is, we parse the the elements of the PRODUCTION (one of my PRODUCTIONS) returned
-        // By so doing, we dive a little further down the tree confident we will find the
+        // By so doing, we dive a little further down the tree confident that we will find the
         //  current TOKEN down there.
         let result = doesCurrentTokenAppearDeeper(  )
         if result.success {
@@ -135,6 +135,7 @@ class ProductionRule {
         for p1 in productions {
             let result = p1.doesProductionStartWithARuleReference( )
             if result.success == true {
+                // TODO: Catch error when getRuleNamed does not find rule
                 let result2 = myGrammer!.getRuleNamed( string: result.nextRuleRef )!.doesCurrentTokenAppearDeeper( )
                 if result2.success {
                     found = true

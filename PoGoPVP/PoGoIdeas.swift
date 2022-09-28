@@ -125,7 +125,7 @@ protocol AcquiredKnowledgeP : KnowledgeItemTraits {
     // Reference to a KnowledgeItem
 }
 
-protocol Course : Collection where Element : Hashable{
+protocol zzzCourse : Collection where Element : Hashable{
     // A Collection of KhowledgeItems
 }
 

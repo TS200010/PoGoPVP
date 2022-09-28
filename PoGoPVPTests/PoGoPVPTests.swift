@@ -144,7 +144,6 @@ END-OF-RULE
 ::= : "String" “CurlyQUoteString” <A> {B} [C]
 END-OF-GRAMMER
 END-OF-RULE
-END-OF-ENTRIES
 *INJECT-SYMBOLS*
 ANYCAPSKEY ANYCapLCKey AnyColonKey:
 identifier1 idenTIFier2
@@ -194,9 +193,9 @@ identifier1 idenTIFier2
         tok2 = l.advanceToNextToken()
         XCTAssert( tok1 == tok2 )
         
-        tok1 = .terminalSymbol( .EndOfEntries )
-        tok2 = l.advanceToNextToken()
-        XCTAssert( tok1 == tok2 )
+//        tok1 = .terminalSymbol( .EndOfEntries )
+//        tok2 = l.advanceToNextToken()
+//        XCTAssert( tok1 == tok2 )
         
         tok1 = .terminalSymbol( .InjectSymbols )
         tok2 = l.advanceToNextToken()

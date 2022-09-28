@@ -198,6 +198,11 @@ class MetaGrammerSemantics : SemAnalyser {
                 p = Production( rWIP!.name )
                 p.insertElementAtStart(item: t)
                 rWIP?.addProduction(production: p)
+                
+                t = Token.terminalSymbol(.NumericLiteral(0))
+                p = Production( rWIP!.name )
+                p.insertElementAtStart(item: t)
+                rWIP?.addProduction(production: p)
 //
 //                t = Token.terminalSymbol(.SpecialKeyword(""))
 //                p = Production( rWIP!.name )

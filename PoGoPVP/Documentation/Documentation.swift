@@ -142,9 +142,6 @@ struct encyclopediaEntry : treeArrayNodeTraits {
     let HintItem: String
 }
 
-struct Courses{
-    
-}
 //
 //
 // ----------------------- POGOREPOs (Repositories)

@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-let gLexerTrace = false
-let gParserTrace = false
+let gLexerTrace = true
+let gParserTrace = true
 let gSemanticsTrace = false
-let gDumpGrammers = false
+let gDumpGrammers = true
 let gDumpRepos = false
 //
 // General Purppose Global Declarations
