@@ -10,25 +10,17 @@
 // ie the producion rules and their productions actually execute the parse
 //
 
-class Grammer: CustomStringConvertible, CompilerTarget {
-    
+protocol GrammerTarget{
+    var myCompiler: Compiler? {get set}
+    func setPlumbing( from compiler: Compiler )->Void
+}
+
+class Grammer: CustomStringConvertible, CompilerConstructable, GrammerTarget {
+    // For CustomStringConvertible
     public var description = ""
-    private weak var myCompiler: Compiler?
-    private var name: String = ""
-    private var rootRuleName: String = ""
-    private var defaultRule: ProductionRule?
-    private var rules: [ String: ProductionRule ] = [:]
     
-    init( _ name: String, rootRuleName: String ) {
-        self.description = "Grammer: \(name)"
-        self.name = name
-        self.rootRuleName = rootRuleName
-        // TODO: This default will cause the App to loop if it ever happens
-        self.defaultRule = nil
-    }
-    
-    init(){
-    }
+    // For CompilerConstructable
+    public var name: String = ""
     
     public func dump()->Void{
         print(name, "- ", "Root rule: ", rootRuleName, "\n\n\n")
@@ -44,6 +36,25 @@ class Grammer: CustomStringConvertible, CompilerTarget {
             r.1.setPlumbing( compiler: compiler)
         }
     }
+    
+    // For GrammerTarget
+    public weak var myCompiler: Compiler?
+    
+    private var rootRuleName: String = ""
+    private var defaultRule: ProductionRule?
+    private var rules: [ String: ProductionRule ] = [:]
+    
+    init( _ name: String, rootRuleName: String ) {
+        self.description = "Grammer: \(name)"
+        self.name = name
+        self.rootRuleName = rootRuleName
+        // TODO: This default will cause the App to loop if it ever happens
+        self.defaultRule = nil
+    }
+    
+    init(){
+    }
+
     
     public func getRuleNamed( string: String ) -> ProductionRule?{
         compilerTrace( s:"GRA: \(#function): \(string)" )

@@ -16,7 +16,12 @@
 // MARK: ENCYCLOPEDIA
 //
 
-struct EncyclopediaRepo:  PoGoRepoTraits, CompilerTarget {
+struct EncyclopediaRepo:  RepoTarget, CompilerConstructable {
+    var parent: Repo?
+    
+    var myCompiler: Compiler
+    
+    var name: String = ""
     
     func setPlumbing(from compiler: Compiler) {
     }
@@ -44,28 +49,28 @@ struct EncyclopediaRepo:  PoGoRepoTraits, CompilerTarget {
 // MARK: KNOWLEDGE ITEM
 //
 protocol KnowledgeItemTraits {
-    var id: ID { get }
-    var kiName : String { get set }
+//   var id: ID { get }
+    var kiName: String { get }
+    var kiType: String { get }      // For now
+    //  test could be a tuple containing everything ... ?
+    var testType: String { get }    // For now
+    var testAnswer: String { get }  // For now
 }
 
-struct KnowledgeItemTypeNames : KnowledgeItemTraits {
-    var id: ID
-    var kiName: String
-    var typeNames : Array<String>
-}
+//struct KIType : KnowledgeItemTraits {
+////    var id: ID
+//    var kiName: String
+//    var kiType: String
+//    var typeNames : Array<String>
+//}
 
-struct KnowledgeItemTypeColors : KnowledgeItemTraits {
-    var id: ID
-    var kiName: String
-//    var typeColors : Array<Color>
-}
 
 //
 // MARK: TEST ITEM
 //
 
 protocol TestItemTraits{
-    var id: ID { get }
+//    var id: ID { get }
     var question: String { get set }
     var questionType: QuestionTypes { get set }
     var answerType: AnswerTypes { get set }
@@ -80,32 +85,32 @@ extension TestItemTraits {
     
 
 struct TestItemTypeImage : TestItemTraits{
-    var id: ID
+//    var id: ID
     var question: String
-    var questionType: QuestionTypes = QuestionTypes.Image
-    var answerType: AnswerTypes = AnswerTypes.YesNo
+    var questionType: QuestionTypes = QuestionTypes.Image("")
+    var answerType: AnswerTypes = AnswerTypes.TrueFalse(true)
     var correctAnswer: String
 }
 
 struct TestItemColor : TestItemTraits{
-    var id: ID
+//    var id: ID
     var question: String
-    var questionType: QuestionTypes = QuestionTypes.Image
-    var answerType: AnswerTypes = AnswerTypes.MultChoiceFixed
+    var questionType: QuestionTypes = QuestionTypes.Image("")
+    var answerType: AnswerTypes = AnswerTypes.MultChoiceFixed(0)
     var correctAnswer: String
 }
 
 enum QuestionTypes {
-    case Text
-    case Image
-    case Animation
-    case Video
+    case Text (String)
+    case Image (String)
+    case Animation (String)
+    case Video (String)
 }
     
 enum AnswerTypes {
-    case YesNo
-    case MultChoiceFixed
-    case MultChoiceRelated
+    case TrueFalse (Bool)
+    case MultChoiceFixed (Int)
+    case MultChoiceRelated (Int)
 }
 
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MonType : Int, CustomStringConvertible {
+enum MonType : Int, CustomStringConvertible, Codable {
     case normal=0
     case fire
     case water
@@ -27,6 +27,7 @@ enum MonType : Int, CustomStringConvertible {
     case dark
     case steel
     case fairy
+    case noType
     
     var description: String {
         switch self{
@@ -48,6 +49,7 @@ enum MonType : Int, CustomStringConvertible {
         case .dark:     return "Dark"
         case .steel:    return "Steel"
         case .fairy:    return "Fairy"
+        case .noType:   return "NoType"
         }
     }
     
@@ -69,7 +71,8 @@ enum MonType : Int, CustomStringConvertible {
         "dragon":       .dragon,
         "dark":         .dark,
         "steel":        .steel,
-        "fairy":        .fairy
+        "fairy":        .fairy,
+        "none":         .noType
     ]
     
     func stringFromMonType( ) -> String{
@@ -78,10 +81,10 @@ enum MonType : Int, CustomStringConvertible {
 }
 
 extension String{
-    func monTypeFromString()->MonType?{
+    func monTypeFromString()->MonType {
         var s = self.lowercased()
         s = s.replacingOccurrences(of: " ", with: "")
-        return MonType.patterns[s]
+        return MonType.patterns[s] ?? .noType
     }
 }
 

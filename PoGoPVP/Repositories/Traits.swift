@@ -108,6 +108,11 @@ struct AttackerTraits : Traits {
             t.effectiveAgainst = []
             t.noEffectAgainst = []
             
+        case .noType:
+            t.superEffectiveAgainst = []
+            t.effectiveAgainst = []
+            t.noEffectAgainst = []
+            
         }
         return t
     }
@@ -123,93 +128,98 @@ struct DefenderTraits : Traits {
         switch forType {
         case .normal :
             t.resistances = []
-            t.weaknesses  = [MonType.fighting]
-            t.immunities  = [MonType.ghost]
+            t.weaknesses  = [.fighting]
+            t.immunities  = [.ghost]
             
         case .fighting:
-            t.resistances = [MonType.rock, MonType.bug, MonType.dark]
-            t.weaknesses = [MonType.flying, MonType.psychic, MonType.fairy]
+            t.resistances = [.rock, .bug, .dark]
+            t.weaknesses = [.flying, .psychic, .fairy]
             t.immunities = []
             
-        case MonType.flying:
-            t.resistances = [MonType.fighting, MonType.bug, MonType.grass]
-            t.weaknesses = [MonType.rock, MonType.electric, MonType.ice]
-            t.immunities = [MonType.ground]
+        case .flying:
+            t.resistances = [.fighting, .bug, .grass]
+            t.weaknesses = [.rock, .electric, .ice]
+            t.immunities = [.ground]
             
-        case MonType.poison:
-            t.resistances = [MonType.fighting, MonType.poison, MonType.bug, MonType.fairy,MonType.grass]
-            t.weaknesses = [MonType.ground, MonType.psychic]
+        case .poison:
+            t.resistances = [.fighting, .poison, .bug, .fairy,.grass]
+            t.weaknesses = [.ground, .psychic]
             t.immunities = []
             
-        case MonType.ground:
-            t.resistances = [MonType.poison, MonType.rock]
-            t.weaknesses = [MonType.water, MonType.grass, MonType.ice]
-            t.immunities = [MonType.electric]
+        case .ground:
+            t.resistances = [.poison, .rock]
+            t.weaknesses = [.water, .grass, .ice]
+            t.immunities = [.electric]
             
-        case MonType.rock:
-            t.resistances = [.normal, MonType.flying, MonType.poison, MonType.fire]
-            t.weaknesses = [MonType.fighting, MonType.ground, MonType.steel, MonType.water, MonType.grass]
+        case .rock:
+            t.resistances = [.normal, .flying, .poison, .fire]
+            t.weaknesses = [.fighting, .ground, .steel, .water, .grass]
             t.immunities = []
             
-        case MonType.bug:
-            t.resistances = [MonType.fighting, MonType.ground, MonType.grass]
-            t.weaknesses = [MonType.flying, MonType.rock, MonType.fire]
+        case .bug:
+            t.resistances = [.fighting, .ground, .grass]
+            t.weaknesses = [.flying, .rock, .fire]
             t.immunities = []
             
-        case MonType.ghost:
-            t.resistances = [MonType.poison, MonType.bug]
-            t.weaknesses = [MonType.ghost,MonType.dark]
-            t.immunities = [MonType.normal, MonType.fighting]
+        case .ghost:
+            t.resistances = [.poison, .bug]
+            t.weaknesses = [.ghost,.dark]
+            t.immunities = [.normal, .fighting]
             
-        case MonType.steel:
-            t.resistances = [MonType.normal, MonType.flying, MonType.rock, MonType.bug, MonType.steel, MonType.grass, MonType.psychic, MonType.ice, MonType.dragon, MonType.fairy]
-            t.weaknesses = [MonType.fighting, MonType.ground, MonType.fire]
-            t.immunities = [MonType.poison]
+        case .steel:
+            t.resistances = [.normal, .flying, .rock, .bug, .steel, .grass, .psychic, .ice, .dragon, .fairy]
+            t.weaknesses = [.fighting, .ground, .fire]
+            t.immunities = [.poison]
             
-        case MonType.fire:
-            t.resistances = [MonType.bug, MonType.steel, MonType.fire, MonType.grass, MonType.ice, MonType.fairy]
-            t.weaknesses = [MonType.ground, MonType.rock, MonType.water]
+        case .fire:
+            t.resistances = [.bug, .steel, .fire, .grass, .ice, .fairy]
+            t.weaknesses = [.ground, .rock, .water]
             t.immunities = []
             
-        case MonType.water:
-            t.resistances = [MonType.steel, MonType.fire, MonType.water, MonType.ice]
-            t.weaknesses = [MonType.grass, MonType.electric]
+        case .water:
+            t.resistances = [.steel, .fire, .water, .ice]
+            t.weaknesses = [.grass, .electric]
             t.immunities = []
             
-        case MonType.grass:
-            t.resistances = [MonType.ground, MonType.water, MonType.grass, MonType.electric]
-            t.weaknesses = [MonType.flying, MonType.poison, MonType.bug, MonType.fire, MonType.ice]
+        case .grass:
+            t.resistances = [.ground, .water, .grass, .electric]
+            t.weaknesses = [.flying, .poison, .bug, .fire, .ice]
             t.immunities = []
             
-        case MonType.electric:
-            t.resistances = [MonType.flying, MonType.steel, MonType.electric]
-            t.weaknesses = [MonType.ground]
+        case .electric:
+            t.resistances = [.flying, .steel, .electric]
+            t.weaknesses = [.ground]
             t.immunities = []
             
-        case MonType.psychic:
-            t.resistances = [MonType.fighting, MonType.psychic]
-            t.weaknesses = [MonType.bug, MonType.ghost, MonType.dark]
+        case .psychic:
+            t.resistances = [.fighting, .psychic]
+            t.weaknesses = [.bug, .ghost, .dark]
             t.immunities = []
             
-        case MonType.ice:
-            t.resistances = [MonType.ice]
-            t.weaknesses = [MonType.fighting, MonType.fire, MonType.steel, MonType.rock]
+        case .ice:
+            t.resistances = [.ice]
+            t.weaknesses = [.fighting, .fire, .steel, .rock]
             t.immunities = []
             
-        case MonType.dragon:
-            t.resistances = [MonType.fire, MonType.water, MonType.grass, MonType.electric]
-            t.weaknesses = [MonType.dragon, MonType.ice, MonType.fairy]
+        case .dragon:
+            t.resistances = [.fire, .water, .grass, .electric]
+            t.weaknesses = [.dragon, .ice, .fairy]
             t.immunities = []
             
-        case MonType.dark:
-            t.resistances = [MonType.ghost, MonType.dark]
-            t.weaknesses = [MonType.fighting, MonType.fairy, MonType.bug]
-            t.immunities = [MonType.psychic]
+        case .dark:
+            t.resistances = [.ghost, .dark]
+            t.weaknesses = [.fighting, .fairy, .bug]
+            t.immunities = [.psychic]
             
-        case MonType.fairy:
-            t.resistances = [MonType.fighting, MonType.bug, MonType.dark]
-            t.weaknesses = [MonType.poison, MonType.steel]
-            t.immunities = [MonType.dragon]
+        case .fairy:
+            t.resistances = [.fighting, .bug, .dark]
+            t.weaknesses = [.poison, .steel]
+            t.immunities = [.dragon]
+            
+        case .noType:
+            t.resistances = []
+            t.weaknesses = []
+            t.immunities = []
 
         }
         

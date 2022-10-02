@@ -17,31 +17,32 @@ struct PoGoView: View {
     @ObservedObject var viewModel: CPoGoViewModel
     
     var body: some View {
-                VStack{
-                    Spacer()
-                    Text("You are being attacked...\nHow dangerous is this?")
-                    Spacer()
-                    Circle()
-//                        .fill().foregroundColor(Color.ui.Normal)
-                        .fill().foregroundColor(Color("Normal"))
-                        .frame(width: 100.0, height: 100.0 )
-                        .position(x:250, y: 150)
-                        .onTapGesture{
-                            viewModel.chooseNormal()
-                        }
-                    Circle()
-                        .fill().foregroundColor(Color.ui.fire)
-                        .frame(width: 200, height: 200)
-                        .position(x:150, y: 100)
-                    Image("Mewtwo")
-                        .frame(width: 200, height: 200)
-                    Image("Dragon")
-                        .frame(width: 200, height: 200)
+        VStack{
+            Spacer()
+            Text("You are being attacked...\nHow dangerous is this?")
+            Spacer()
+            Image("Mewtwo")
+                .frame(width: 200, height: 200)
+            Image("Dragon")
+                .frame(width: 200, height: 200)
+            Circle()
+//                .fill().foregroundColor(Color.ui.Normal)
+                .fill().foregroundColor(Color("Normal"))
+                .frame(width: 100.0, height: 100.0 )
+                .position(x:250, y: 150)
+                .onTapGesture{
+                    viewModel.chooseNormal()
                 }
-            .background( Image("PoGoBk"))
-//            .blur(radius:10)
+            Circle()
+                .fill().foregroundColor(Color.ui.fire)
+                .frame(width: 200, height: 200)
+                .position(x:150, y: 100)
 
-
+        }
+        .background( Image("PoGoBk"))
+        //            .blur(radius:10)
+         
+        
     }
 }
 
@@ -51,3 +52,4 @@ struct ContentView_Previews: PreviewProvider {
         PoGoView( viewModel: viewModel )
     }
 }
+

@@ -11,7 +11,8 @@ class Production {
     private weak var myGrammer: Grammer?
     private weak var myLexer:   Lexer?
     private weak var myParser:  Parser?
-    private weak var mySemanticAnalyser: MetaGrammerSemantics?
+    // TODO: Does the SemAnalyser need to be WEAK? - that does not compile though...
+    private var mySemanticAnalyser: SemAnalyser?
     private var elementList: [ Token ]
 
     init( _ name: String, elements: Token...){
@@ -41,7 +42,7 @@ class Production {
         myGrammer  = compiler.grammerToUse
         myLexer    = compiler.lexer
         myParser   = compiler.parser
-        mySemanticAnalyser = compiler.semAnalyser as? MetaGrammerSemantics
+        mySemanticAnalyser = compiler.semAnalyser /*as? MetaGrammerSemantics*/
     }
 
     // parseElements
@@ -55,9 +56,7 @@ class Production {
         var currToken = myLexer?.getCurrentToken()
         for t in elementList {
             currToken = myLexer?.getCurrentToken()
-            if gParserTrace {
-                print( "EXPECTING: \(String(describing: t)) EXAMINING: \(String(describing: currToken))", t==currToken)
-            }
+            if gParserTrace { print( "EXPECTING: \(String(describing: t)) EXAMINING: \(String(describing: currToken))", t==currToken) }
             switch t {
             case .terminalSymbol(_):
                 if t==currToken {
@@ -68,33 +67,24 @@ class Production {
                     print("SYNTAX ERROR 02: \(String(describing: t)) expected \(String(describing: currToken)) found")
                     return false
                 }
-//                
-//            case .nonTerminalSymbol(_):
-//                if t==currToken {
-//                    myCompiler?.pushSem(item: currToken! )
-//                    currToken = myLexer?.advanceToNextToken()
-//                    continue
-//                } else {
-//                    print("SYNTAX ERROR 03: \(String(describing: t)) expected \(String(describing: currToken)) found")
-//                    return false
-//                }
                 
             case .ruleReference( let s ):
                 // TODO: check forced unwrapping OK
                 if (myGrammer!.getRuleNamed(string: s))!.parseProductionRule(){
-//                    currToken = myLexer?.getCurrentToken()
                     continue
                 } else {
-//                    currToken = myLexer?.getCurrentToken()
                     print( "SYNTAX ERROR 04: Production \(s) failed to parse at \(String(describing: currToken))")
                     return false
                 }
 
             case .semanticActionReference( let s ):
                 // TODO: check forced unwrapping OK
-                mySemanticAnalyser?.semDispatch( name: s )
- //               currToken = myLexer?.getCurrentToken()
-                continue
+                if mySemanticAnalyser!.semDispatch( name: s ) {
+                    continue
+                } else {
+                    print("FATAL ERROR: Semantic Analysis failed")
+                    return false
+                }
                 
             case .noToken:
                 print("FATAL ERROR: .noToken found unexpectedly")
@@ -133,15 +123,13 @@ class Production {
         switch elementList[0] {
         case .semanticActionReference(_):
             i = 1
-            if elementList.count<=1 { // Check if  there is only a semAction 
+            if elementList.count<=1 {
                 return false
             }
         default:
             break
         }
-        if gParserTrace {
-            print( "LOOKING FOR: \(t) AT: \( elementList[i])", t==elementList[i])
-        }
+        if gParserTrace { print( "LOOKING FOR: \(t) AT: \( elementList[i])", t==elementList[i]) }
         if elementList[i] == t {
             return true
         }

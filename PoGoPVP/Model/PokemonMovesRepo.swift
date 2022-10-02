@@ -19,7 +19,7 @@ enum MoveName: Int {
     case Yawn       = 2
 }
 
-protocol PokemonMoveTraits : PoGoRepoTraits, Hashable {
+protocol PokemonMoveTraits : RepoTarget, Hashable {
     var name: String { get }
     var typeName: MonType { get }
     // Other traits of PoGo Moves
@@ -36,6 +36,8 @@ extension PokemonMoveTraits {
 }
  
 struct PokemonMove : PokemonMoveTraits/*, Decodable*/ {
+    var parent: Repo?
+    
     func setPlumbing(from compiler: Compiler) {
     }
     
@@ -43,7 +45,7 @@ struct PokemonMove : PokemonMoveTraits/*, Decodable*/ {
         return
     }
     
-    static var nextID: ID = 0
+//    static var nextID: ID = 0
 
     var name: String
     var typeName: MonType

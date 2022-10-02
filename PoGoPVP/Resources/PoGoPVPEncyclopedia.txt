@@ -1,1 +1,0 @@
-﻿ENTRY entry-001 FOR-COURSE pogo-001    DATA ( TypeImageColor: dragon, Image: “<fn>”, Color: dragonBlue )    TEST ( TextQuestion: “What is this?”,  AnswerType: YESNO, Answer: “A Dragon” )    HINT ( Text: “Blue Dragon Soy Sauce” )END-OF-ENTRYEND-OF-ENTRIES	

@@ -46,6 +46,7 @@ public class Lexer {
             currIndex = i!
         } else {
             currIndex = stringToParse.endIndex
+            if gLexerTrace { print("LEX: End of stringToParse reached.") }
             eof = true
         }
     }
