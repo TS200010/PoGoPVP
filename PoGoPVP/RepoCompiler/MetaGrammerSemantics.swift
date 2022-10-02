@@ -13,7 +13,7 @@ class MetaGrammerSemantics : SemAnalyser {
         self.myCompiler = compiler
     }
     
-    func getTargetAsConstructed() -> CompilerTarget? {
+    func getTargetAsConstructed() -> CompilerConstructable? {
         return gWIP
     }
     
@@ -21,7 +21,7 @@ class MetaGrammerSemantics : SemAnalyser {
     var semActions: [String: ( )->Void ] = [:]
     var pWIP: Production?
     var rWIP: ProductionRule?
-    var gWIP: Grammer?
+    var gWIP = Grammer()
     
     init( /*compiler: Compiler*/ ){
         self.myCompiler = nil
@@ -35,27 +35,10 @@ class MetaGrammerSemantics : SemAnalyser {
         semActions["SemProductionEnd"]       = { ()->() in self.semProductionEnd( ) }
     }
     
-//    func semActionsSetup()->Void {
-//        semActions["SemGrammerStart"]        = { ()->() in self.semGrammerStart( ) }
-//        semActions["SemGrammerEnd"]          = { ()->() in self.semGrammerEnd( ) }
-//        semActions["SemRuleStart"]           = { ()->() in self.semRuleStart( ) }
-//        semActions["SemRuleEnd"]             = { ()->() in self.semRuleEnd( ) }
-//        semActions["SemProductionListStart"] = { ()->() in self.semProductionListStart( ) }
-//        semActions["SemProductionListEnd"]   = { ()->() in self.semProductionListEnd( ) }
-//        semActions["SemProductionStart"]     = { ()->() in self.semProductionStart( ) }
-//        semActions["SemProductionEnd"]       = { ()->() in self.semProductionEnd( ) }
+//    func getXXXAsConstucted()->CompilerConstructable?{
+//        return gWIP
 //    }
-    
-    func getXXXAsConstucted()->CompilerTarget?{
-        return gWIP
-    }
-    
-    func semDispatch( name: String ) -> Void {
-        if let semActionToCall = semActions[ name ] {
-            semActionToCall( )
-        }
-    }
-    
+
     func semGrammerStart(  )->Void {
         compilerTrace( s:"SEM:------------------------ \(#function)" )
         var root = ""
@@ -90,7 +73,7 @@ class MetaGrammerSemantics : SemAnalyser {
         compilerTrace( s:"SEM:------------------------ \(#function)" )
         // Pop EndOfRule
         myCompiler!.popSem()
-        gWIP?.addRule( &rWIP! )
+        gWIP.addRule( &rWIP! )
         rWIP = nil
     }
     

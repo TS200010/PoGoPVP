@@ -11,8 +11,9 @@ import Foundation
 
 struct PoGoModel {
     var compiler: Compiler?
-    var encyclopedia = EncyclopediaRepo(contents: [:])
-    var dex: pokedex?
+//    var encyclopedia = EncyclopediaRepo(myCompiler: <#Compiler#>, contents: [:])
+    var dex = pokedex()
+    var courseRepo = CourseRepo()
     var stringToParse: String = ""
     
     private mutating func GetStringToParse( resourceToCompile: String, ext: String ) -> Bool {
@@ -33,7 +34,7 @@ struct PoGoModel {
         return true
     }
 
-    fileprivate mutating func parseGrammer( resourceToCompile: String, tokenListToUse: TokenListTraits, grammerToUse: Grammer, semAnalyserToUse: SemAnalyser )->CompilerTarget? { 
+    fileprivate mutating func parseGrammer( resourceToCompile: String, tokenListToUse: TokenListTraits, grammerToUse: Grammer, semAnalyserToUse: SemAnalyser )->CompilerConstructable? { 
         guard GetStringToParse( resourceToCompile: resourceToCompile, ext: "txt") != false else { return nil }
         guard stringToParse != "" else { return nil }
         let targetGrammer = Grammer()
@@ -56,22 +57,22 @@ struct PoGoModel {
         let data = Data(stringToParse.utf8)
         let monList = [100, 200, 300]
         dex = pokedex( )
-        if dex?.populatePokemons(from: data, monList: monList ) != true {
+        if dex.populatePokemons(from: data, monList: monList ) != true {
             print("FATAL ERROR - failed to create pokedex")
         }
-        dex!.dump()
+        dex.dump()
         
         // Create the META-PARSER-GRAMMER
         // It is CORRECT that we parse the PoGoPVPGrammer ITSELF with the MetaParserTokenList
         // ... think about it!
-
+        
         // First Compile the MetaGrammer using hard coded grammer
-        let hardCodedGrammer: CompilerTarget = Grammer.CreateMetaParserGrammer( )
-        hardCodedGrammer.dump()
-        let compiledMPGrammer: CompilerTarget?       = parseGrammer( resourceToCompile: "MetaParserGrammer",
-                                                                    tokenListToUse:     MetaParserTokenList(),
-                                                                    grammerToUse:       hardCodedGrammer as! Grammer,
-                                                                    semAnalyserToUse:   MetaGrammerSemantics() )
+        let hardCodedGrammer: CompilerConstructable = Grammer.CreateMetaParserGrammer( )
+        if gDumpGrammers { hardCodedGrammer.dump() }
+        let compiledMPGrammer: CompilerConstructable?       = parseGrammer( resourceToCompile: "MetaParserGrammer",
+                                                                     tokenListToUse:     MetaParserTokenList(),
+                                                                     grammerToUse:       hardCodedGrammer as! Grammer,
+                                                                     semAnalyserToUse:   MetaGrammerSemantics() )
         if compiledMPGrammer==nil {
             print ("FATAL ERROR: MetaParserGrammer was not successfully compiled from hard coded grammer")
             return false
@@ -80,67 +81,74 @@ struct PoGoModel {
         }
         
         // Compile the MetaGrammer using the grammer just created (not strictly necessary but a good test)
-        let compiledMPGrammer2: CompilerTarget?       = parseGrammer( resourceToCompile: "MetaParserGrammer",
-                                                                    tokenListToUse:     MetaParserTokenList(),
-                                                                    grammerToUse:       compiledMPGrammer as! Grammer,
-                                                                    semAnalyserToUse:   MetaGrammerSemantics() )
+        let compiledMPGrammer2: CompilerConstructable?       = parseGrammer( resourceToCompile: "MetaParserGrammer",
+                                                                      tokenListToUse:     MetaParserTokenList(),
+                                                                      grammerToUse:       compiledMPGrammer as! Grammer,
+                                                                      semAnalyserToUse:   MetaGrammerSemantics() )
         if compiledMPGrammer2==nil {
             print ("FATAL ERROR: MetaParserGrammer was not successfully compiled from recently minted grammer")
             return false
         } else {
             if gDumpGrammers { compiledMPGrammer2!.dump() }
         }
- 
-        // Compile the Course Grammer - PoGoPVPCourseGrammer
-        let PoGoCourseGrammer: CompilerTarget?      = parseGrammer( resourceToCompile: "PoGoPVPCourseGrammer",
+        
+        // Compile the Topic Grammer - PoGoPVPTopicGrammer
+        let PoGoTopicGrammer: CompilerConstructable?      = parseGrammer( resourceToCompile: "PoGoPVPTopicGrammer",
                                                                     tokenListToUse:    PoGoPVPGrammerTokenList(),
                                                                     grammerToUse:      compiledMPGrammer2 as! Grammer,
                                                                     semAnalyserToUse:  MetaGrammerSemantics() )
         
-        if PoGoCourseGrammer == nil {
-            print ("FATAL ERROR: PoGoPVPCourseGrammer was not successfully compiled")
+        if PoGoTopicGrammer == nil {
+            print ("FATAL ERROR: PoGoPVPTopicGrammer was not successfully compiled")
             return false
         } else {
-            if gDumpGrammers { PoGoCourseGrammer!.dump() }
+            if gDumpGrammers { PoGoTopicGrammer!.dump() }
         }
         
-        // Compile the Couses themselves
-        let PoGoCourse_mlsp_s11_01: CompilerTarget? = parseGrammer( resourceToCompile: "PoGoPVP-mlsp-s11-01",
+        // Compile the Topics themselves
+        let PoGoPVPTopic_mlsp_s11_01: CompilerConstructable? = parseGrammer( resourceToCompile: "PoGoPVPTopic-mlsp-s11-01",
                                                                     tokenListToUse:    PoGoPVPRepoTokenList(),
-                                                                    grammerToUse:      PoGoCourseGrammer as! Grammer,
-                                                                    semAnalyserToUse:  PoGoRepoSemantics() )
+                                                                    grammerToUse:      PoGoTopicGrammer as! Grammer,
+                                                                    semAnalyserToUse:  PoGoRepoSemantics( model: self ) )
         
-        if PoGoCourse_mlsp_s11_01 == nil {
-            print ("FATAL ERROR: PoGoCourse_mlsp_s11_01 was not successfully compiled")
-            return false
-        } else {
-            if gDumpGrammers { PoGoCourse_mlsp_s11_01!.dump() }
+        if PoGoPVPTopic_mlsp_s11_01 == nil {
+            print ("FATAL ERROR: PoGoPVPTopic_mlsp_s11_01 was not successfully compiled")
+            //            return false
+            } else {
+                if gDumpGrammers { PoGoPVPTopic_mlsp_s11_01!.dump() }
+                let courseName = (PoGoPVPTopic_mlsp_s11_01 as! Topic).myCourse
+                var c = courseRepo.getCourseNamed( name: courseName )
+                if c == nil {
+                    // Need to create the Course itself
+                    c = Course( name: courseName )
+                }
+                c!.addTopic( name: PoGoPVPTopic_mlsp_s11_01!.name, topic: PoGoPVPTopic_mlsp_s11_01 as! Topic )
+                c!.dump()
+            }
+            
+            //        // Now we compile the PoGoPVPGrammer - NOT USING ATM
+            //        let compiledPoGoPVPGrammer: CompilerTarget? = parseGrammer( resourceToCompile: "PoGoPVPGrammer",
+            //                                                                    tokenListToUse:    PoGoPVPGrammerTokenList(),
+            //                                                                    grammerToUse:      compiledMPGrammer as! Grammer,
+            //                                                                    semAnalyserToUse:  MetaGrammerSemantics() )
+            //
+            //        if compiledPoGoPVPGrammer == nil {
+            //            print ("FATAL ERROR: PoGoPVPGrammer was not successfully compiled")
+            //            return false }
+            //        if gDumpGrammers { compiledPoGoPVPGrammer!.dump() }
+            
+            //
+            //        // Now we start creating the RePo's
+            //        let repositories: CompilerTarget?                    = parseGrammer( resourceToCompile: "PoGoPVPEncyclopedia",
+            //                                                                    tokenListToUse:    PoGoPVPRepoTokenList(),
+            //                                                                    grammerToUse:      compiledPoGoPVPGrammer as! Grammer,
+            //                                                                    semAnalyserToUse:  PoGoRepoSemantics( ) )
+            //
+            //        if repositories == nil {
+            //            print ("FATAL ERROR: Repositories were not successfully compiled")
+            //            return false }
+            //        if gDumpRepos { repositories!.dump() }
+            
+            return true
         }
-        
-//        // Now we compile the PoGoPVPGrammer - NOT USING ATM
-//        let compiledPoGoPVPGrammer: CompilerTarget? = parseGrammer( resourceToCompile: "PoGoPVPGrammer",
-//                                                                    tokenListToUse:    PoGoPVPGrammerTokenList(),
-//                                                                    grammerToUse:      compiledMPGrammer as! Grammer,
-//                                                                    semAnalyserToUse:  MetaGrammerSemantics() )
-//
-//        if compiledPoGoPVPGrammer == nil {
-//            print ("FATAL ERROR: PoGoPVPGrammer was not successfully compiled")
-//            return false }
-//        if gDumpGrammers { compiledPoGoPVPGrammer!.dump() }
-        
-//
-//        // Now we start creating the RePo's
-//        let repositories: CompilerTarget?                    = parseGrammer( resourceToCompile: "PoGoPVPEncyclopedia",
-//                                                                    tokenListToUse:    PoGoPVPRepoTokenList(),
-//                                                                    grammerToUse:      compiledPoGoPVPGrammer as! Grammer,
-//                                                                    semAnalyserToUse:  PoGoRepoSemantics( ) )
-//
-//        if repositories == nil {
-//            print ("FATAL ERROR: Repositories were not successfully compiled")
-//            return false }
-//        if gDumpRepos { repositories!.dump() }
-        
-        return true
-    }
-    
 }

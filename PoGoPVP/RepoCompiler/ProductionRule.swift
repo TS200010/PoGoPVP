@@ -41,12 +41,12 @@ class ProductionRule {
         for p in productions{
             if p.name == name { return p }
         }
+        print("FATAL ERROR: Production named \(name) not found")
         return nil
     }
     
     public func addProduction( production: Production )->Void{
- //       production.myCompiler = myCompiler
-        production.name += String( productions.count )
+        production.name += String( productions.count ) // Just to give it a unique name
         productions.append( production )
     }
     

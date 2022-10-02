@@ -6,61 +6,28 @@
 //  Copyright © 2022 Anthony Stanners. All rights reserved.
 //
 
-// HOW TO STOP "THE ERROR"
-// https://khawerkhaliq.com/blog/swift-associated-types-self-requirements/
-
-
 import Foundation
 import SwiftUI
 
-typealias Something1 = Int // For now!
-typealias Something2 = Int // For now!
-typealias Something3 = String // For now!
 
-
-
-
-// First I have a hierachy of protocols to represent my data and managing access to it
-protocol A {} // Placeholder for future functionality
-
-protocol AChildP : A {
-    var i:   Int { get }
+struct KIPokemonType : KnowledgeItemTraits {
+    // Required by KnowledgeItemTraits
+    var kiName: String = ""
+    var kiType: String = ""
+    var testType: String = ""
+    var testAnswer: String = ""
+    
+    var pokemon: String = ""
 }
 
-typealias BigThings = Int // These will be much bigger than Ints
+struct KIResistances: KnowledgeItemTraits {
+    // Required by KnowledgeItemTraits
+    var kiName: String = ""
+    var kiType: String = ""
+    var testType: String = ""
+    var testAnswer: String = ""
 
-struct AChild {
-    var i:   BigThings
-}
-// I will add funcs here operating on A to manage the data in AChild
-
-// Next: Some big collection of AChilds - let say an Array for now
-let AChilds : Array< AChild > = [ AChild(i:1), AChild(i:2), AChild(i:3) ]
-    // This will a huge array so when I head over to accessing it from B I only want to reference it
-
-// Secondly I want a parallel set of protocols to interpret my data. I don't want to copy it
-protocol B {
-    associatedtype U where U == A // I want the base protocols to be constrained to each other (I think!)
-}
-
-protocol BChildP : B {
-    var s: String { get }
-}
-
-// This is where I get stuck...
-// If this were OO then perhaps I would create an Array (or whatever collection type I used with AChilds) of objects
-//  that in turn pointed to a corresponding AChild and then referenced the AChilds.
-// I could do that here too with a Class I think
-
-// However, I want to stay with Structs - but they are value things. I cant seem to work out how to tie a
-//  BChild to its correcponding AChild without a copy being made.
-
-
-
-// TypeColours Knowledge
-// =====================
-protocol TypeColourKnowledgeItemP : KnowledgeItemTraits {
-    var typeName: MonType { get }
+    var monType: MonType
 }
 
 
@@ -89,19 +56,7 @@ class CKnowledgeItem : KnowledgeItemP {
 }
 */
 
-func AddTypeColourKnowledge()->Void{
-    
-}
 
-// TypeNames knowledge
-// ===================
-
-
-protocol PokemonTypeEffectivenessAttackKnowledge : KnowledgeItemTraits {
-    // The Pokemon
-    // Type 1
-    // Type 2
-}
 
 /*
 protocol KnowledgeHash{

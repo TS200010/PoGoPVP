@@ -74,11 +74,11 @@ final class PoGoPVPTests: XCTestCase {
             
             t1 = .terminalSymbol(TerminalSymbol.NumericLiteral(0))
             t2 = .terminalSymbol(TerminalSymbol.NumericLiteral(999))
-            XCTAssert(t1 != t2)
+            XCTAssert(t1 == t2)
             
             t1 = .terminalSymbol(TerminalSymbol.NumericLiteral(999))
             t2 = .terminalSymbol(TerminalSymbol.NumericLiteral(0))
-            XCTAssert(t1 != t2)
+            XCTAssert(t1 == t2)
             
             t1 = .terminalSymbol(TerminalSymbol.NumericLiteral(999))
             t2 = .terminalSymbol(TerminalSymbol.NumericLiteral(999))
@@ -491,7 +491,7 @@ END-OF-GRAMMER
         b = compiler.compile()
         compiler.dumpGrammer()
         compiler.dumpSemStack()
-        let createdGrammer = compiler.getResult() as CompilerTarget?
+        let createdGrammer = compiler.getResult() as CompilerConstructable?
         createdGrammer?.dump()
         XCTAssert( b == true )
         XCTAssert( compiler.peekSem() == nil )
@@ -600,7 +600,7 @@ END-OF-GRAMMER
         var b = compiler.compile()
         compiler.dumpGrammer()
         compiler.dumpSemStack()
-        let createdGrammer = compiler.getResult() as CompilerTarget?
+        let createdGrammer = compiler.getResult() as CompilerConstructable?
         createdGrammer?.dump()
         XCTAssert( b == true )
         XCTAssert( compiler.peekSem() == nil )

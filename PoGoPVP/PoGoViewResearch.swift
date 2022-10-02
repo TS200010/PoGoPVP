@@ -10,7 +10,7 @@ import Foundation
 // Save this remember how to create a view on the learnable
 
 protocol KnowledgeItemxxx: Codable, Hashable {
-    var id: ID { get set }
+//    var id: ID { get set }
     var question: String { get }
     var correctAnswer: String { get }
     func showYourself()->Void   // This function shows the item of knowledge in the view passed

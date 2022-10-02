@@ -11,7 +11,8 @@ class Production {
     private weak var myGrammer: Grammer?
     private weak var myLexer:   Lexer?
     private weak var myParser:  Parser?
-    private weak var mySemanticAnalyser: MetaGrammerSemantics?
+    // TODO: Does the SemAnalyser need to be WEAK? - that does not compile though...
+    private var mySemanticAnalyser: SemAnalyser?
     private var elementList: [ Token ]
 
     init( _ name: String, elements: Token...){
@@ -41,7 +42,7 @@ class Production {
         myGrammer  = compiler.grammerToUse
         myLexer    = compiler.lexer
         myParser   = compiler.parser
-        mySemanticAnalyser = compiler.semAnalyser as? MetaGrammerSemantics
+        mySemanticAnalyser = compiler.semAnalyser /*as? MetaGrammerSemantics*/
     }
 
     // parseElements
@@ -78,15 +79,18 @@ class Production {
 
             case .semanticActionReference( let s ):
                 // TODO: check forced unwrapping OK
-                mySemanticAnalyser?.semDispatch( name: s )
-                continue
+                if mySemanticAnalyser!.semDispatch( name: s ) {
+                    continue
+                } else {
+                    print("FATAL ERROR: Semantic Analysis failed")
+                    return false
+                }
                 
             case .noToken:
                 print("FATAL ERROR: .noToken found unexpectedly")
                 return false
             }
         }
-        print ("Return TRUE")
         return true
     }
     

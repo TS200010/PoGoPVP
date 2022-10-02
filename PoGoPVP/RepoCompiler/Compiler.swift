@@ -7,16 +7,12 @@
 
 import Foundation
 
-protocol CompilerTarget{
+protocol CompilerConstructable{
+    var  name: String { get }
     func dump()->Void
-    func setPlumbing( from compiler: Compiler )->Void
 }
 
-protocol SemAnalyser{
-    func getTargetAsConstructed()->CompilerTarget?
-    func setCompiler( compiler: Compiler )->Void
-    func semDispatch( name: String )->Void
-}
+
 
 class Compiler {
     public var  grammerToUse:      Grammer
@@ -46,6 +42,35 @@ class Compiler {
         return semStack.pop( )
     }
     
+    func semPopAsString() -> String{
+        var val: String = ""
+        switch popSem()! {
+        case .terminalSymbol( let t ):
+            switch t {
+            case .StringLiteral( let s ):
+                return s
+            case .Identifier( let s ):
+                return s
+            case .AnyKeyword( let s ):
+                return s
+            case .ExactKeyword( let s ):
+                return s
+            case .StringInAngledBrackets( let s ):
+                return s
+            case .StringInSquareBrackets( let s ):
+                return s
+            case .StringInCurlyBraces( let s ):
+                return s
+            case .NumericLiteral( let i ):
+                return i.description
+            default:
+                return ""
+            }
+        default:
+            return ""
+        }
+    }
+
     public func peekSem()->Token?{
         return semStack.peek()
     }
@@ -54,7 +79,7 @@ class Compiler {
         print(semStack)
     }
     
-    public func getResult()->CompilerTarget?{
+    public func getResult()->CompilerConstructable?{
         return semAnalyser.getTargetAsConstructed()
     }
  

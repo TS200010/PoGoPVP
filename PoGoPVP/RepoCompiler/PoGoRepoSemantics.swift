@@ -13,44 +13,55 @@ class PoGoRepoSemantics : SemAnalyser {
         self.myCompiler = compiler
     }
     
-    func getTargetAsConstructed() -> CompilerTarget? {
-        return encWIP
+    func getTargetAsConstructed() -> CompilerConstructable? {
+        return topicWIP
     }
 
     var myCompiler: Compiler?
+    var myModel: PoGoModel
     var semActions: [String: ( )->Void ] = [:]
-    var encWIP: Course?
+    var topicWIP = Topic()
+//    var courseWIP = Course()
+    var kiPokemonTypeWIP: KIPokemonType?
+    var kiResistancesWIP: KIResistances?
+    var id: Int=0
 
-    init( ){
+    init( model: PoGoModel ){
+        self.myModel = model
         self.myCompiler = nil
-        semActions["SemGrammerStart"]         = { ()->() in self.semGrammerStart( ) }
-        semActions["SemGrammerEnd"]           = { ()->() in self.semGrammerEnd( ) }
+        semActions["SemStart"]                = { ()->() in self.semStart( ) }
+        semActions["SemEnd"]                  = { ()->() in self.semEnd( ) }
         semActions["SemCourseStart"]          = { ()->() in self.semCourseStart( ) }
         semActions["SemCourseEnd"]            = { ()->() in self.semCourseEnd( ) }
         semActions["SemPokemonTypeStart"]     = { ()->() in self.semPokemonTypeStart( ) }
         semActions["SemPokemonTypeEnd"]       = { ()->() in self.semPokemonTypeEnd( ) }
-        semActions["SemPokemonTypeTestStart"] = { ()->() in self.semPokemonTypeTestStart( ) }
+//        semActions["SemPokemonTypeTestStart"] = { ()->() in self.semPokemonTypeTestStart( ) }
         semActions["SemPokemonTypeTestEnd"]   = { ()->() in self.semPokemonTypeTestEnd( ) }
     }
     
-    func semDispatch( name: String ) -> Void {
+    func semStart()->Void{
         compilerTrace( s:"SEM:------------------------ \(#function)" )
-        if let semActionToCall = semActions[ name ] {
-            semActionToCall( )
-        }
+        topicWIP = Topic()
     }
     
-    func semGrammerStart()->Void{
-        compilerTrace( s:"SEM:------------------------ \(#function)" )
-        encWIP = Course()
-    }
-    
-    func semGrammerEnd()->Void{
+    func semEnd()->Void{
         compilerTrace( s:"SEM:------------------------ \(#function)" )
     }
     
     func semCourseStart()->Void{
         compilerTrace( s:"SEM:------------------------ \(#function)" )
+        var courseName: String = ""
+        var topicName: String = ""
+        if case .terminalSymbol(.Identifier(let s)) = myCompiler!.popSem() {
+            topicName = s
+        }
+        myCompiler!.popSem() // pop TOPIC keyword
+        if case .terminalSymbol(.Identifier(let s)) = myCompiler!.popSem() {
+            courseName = s
+        }
+        topicWIP.name = topicName
+        topicWIP.myCourse = courseName
+        myCompiler!.popSem() // pop COURSE keyword
     }
     
     func semCourseEnd()->Void{
@@ -59,18 +70,23 @@ class PoGoRepoSemantics : SemAnalyser {
     
     func semPokemonTypeStart()->Void{
         compilerTrace( s:"SEM:------------------------ \(#function)" )
+        kiPokemonTypeWIP = KIPokemonType()
     }
     
     func semPokemonTypeEnd()->Void{
         compilerTrace( s:"SEM:------------------------ \(#function)" )
-    }
-    
-    func semPokemonTypeTestStart()->Void{
-        compilerTrace( s:"SEM:------------------------ \(#function)" )
+        kiPokemonTypeWIP?.testAnswer = myCompiler!.semPopAsString()
+        kiPokemonTypeWIP?.testType = myCompiler!.semPopAsString()
+        myCompiler!.popSem() // Discard TEST
+        kiPokemonTypeWIP?.pokemon = myCompiler!.semPopAsString()
+        kiPokemonTypeWIP?.kiName = topicWIP.name + "-" + id.description + "-" + myCompiler!.semPopAsString()
+        id += 1
+        topicWIP.addKI( ki: kiPokemonTypeWIP! )
     }
     
     func semPokemonTypeTestEnd()->Void{
         compilerTrace( s:"SEM:------------------------ \(#function)" )
     }
+    
 }
     

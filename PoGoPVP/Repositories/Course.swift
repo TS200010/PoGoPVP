@@ -7,15 +7,26 @@
 
 import Foundation
 
-class Course : CompilerTarget {
+struct Course {
+    public var name: String 
+    public var topics: [String: Topic] = [:]
+//    public var myCourseRepo: String
+    var badge: String = ""
     
     func dump() {
-        // TODO:
+        print( "Course: \(name)")
+        for t in topics { t.value.dump() }
     }
     
-    func setPlumbing(from compiler: Compiler) {
-        // Not needed unless we are a Grammer
+    mutating func addTopic( name: String, topic: Topic ){
+        topics[name] = topic
+    }
+    
+    func getTopicNamed( name: String ) -> Topic? {
+        return topics[ name ]
     }
 }
+
+
 
 

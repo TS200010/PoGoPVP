@@ -100,12 +100,13 @@ struct PoGoPVPGrammerTokenList : TokenListTraits {
         ("<[A-Z][A-Za-z\\-]*>",       { (s:String) in return .terminalSymbol(.StringInAngledBrackets(s)) }),
         ("\\{[A-Z][a-zA-Z\\-]*\\}",   { (s:String) in return .terminalSymbol(.StringInCurlyBraces(s)) }),
         ("\\[[A-Z][a-zA-Z\\-]*\\]",   { (s:String) in return .terminalSymbol(.StringInSquareBrackets(s)) }),
+        ("END-OF-ENTRIES",            { _          in return .terminalSymbol(.EndOfEntries) }),
         ("END-OF-GRAMMER",            { _          in return .terminalSymbol(.EndOfGrammer) }),
         ("END-OF-RULE",               { _          in return .terminalSymbol(.EndOfRule) }),
         ("\\*INJECT-SYMBOLS\\*",      { _          in return .terminalSymbol(.InjectSymbols) }),
-        ("[A-Z][A-Z0-9\\-\\:]*\\s",   { (s:String) in return .terminalSymbol(.AnyKeyword(s)) }),
+        ("[A-Z][A-Z0-9][A-Z0-9\\-\\:]*",      { (s:String) in return .terminalSymbol(.AnyKeyword(s)) }),
         ("[0-9]+",                    { (r:String) in return .terminalSymbol(.NumericLiteral((r as NSString).intValue)) }),
-        ("[A-Za-z][a-zA-Z0-9]*",      { (s:String) in return .terminalSymbol(.Identifier(s)) }),
+        ("[A-Za-z][a-zA-Z0-9\\-]*",   { (s:String) in return .terminalSymbol(.Identifier(s)) }),
     ]
 }
 
@@ -115,14 +116,13 @@ struct PoGoPVPRepoTokenList : TokenListTraits {
         ("::=",                       { _          in return .terminalSymbol(.ProductionEquals) }),
         (":",                         { _          in return .terminalSymbol(.EndOfProduction) }),
         ("END-OF-ENTRIES",            { _          in return .terminalSymbol(.EndOfEntries) }),
-        
         ("\"([^\"]+)\"",              { (s:String) in return .terminalSymbol(.StringLiteral(s)) } ),
         ("“([^”]+)”",                 { (s:String) in return .terminalSymbol(.StringLiteral(s)) } ),
         ("\\u201C([^\"]+)\\u201D",    { (s:String) in return .terminalSymbol(.StringLiteral(s)) } ),
-        ("[A-Z][A-Z0-9\\-\\:]*\\s",   { (s:String) in return .terminalSymbol(.ExactKeyword(s)) }),
+        ("[A-Z][A-Z0-9][A-Z0-9\\-\\:]*",
+                                      { (s:String) in return .terminalSymbol(.ExactKeyword(s)) }),
         ("[0-9]+",                    { (r:String) in return .terminalSymbol(.NumericLiteral((r as NSString).intValue)) }),
-        ("[A-Za-z][a-zA-Z0-9:\\-]*",
-                             { (s:String) in return .terminalSymbol(TerminalSymbol.Identifier(s)) }),
+        ("[A-Za-z][a-zA-Z0-9\\-]*",   { (s:String) in return .terminalSymbol(.Identifier(s)) }),
         
 
         // TODO: URL does not work
